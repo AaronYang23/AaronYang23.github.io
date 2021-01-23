@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/AaronYang23.github.io/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/AaronYang23.github.io/lib/pace/pace-theme-fill-left.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/AaronYang23.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/AaronYang23.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/AaronYang23.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/AaronYang23.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/AaronYang23.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/AaronYang23.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/AaronYang23.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Android环境配置,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Android Studio 插件整理（多方收集，持续更新~)插件安装：setting&amp;gt;plugins&amp;gt;Browse Repositories 开发工具插件1.Android Parcelable code generator快捷实现parcelable代码，可直接插入 2.GsonFormat操作：Alt+insert打开插件列表或者直接Alt+s可根据json数据快速生成bean类">
+<meta name="keywords" content="Android环境配置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android开发（四）- 插件整理">
+<meta property="og:url" content="https://aaronyang23.github.io/2018/09/05/Android/环境配置/Android开发（四）-插件整理/index.html">
+<meta property="og:site_name" content="ArronYang">
+<meta property="og:description" content="Android Studio 插件整理（多方收集，持续更新~)插件安装：setting&amp;gt;plugins&amp;gt;Browse Repositories 开发工具插件1.Android Parcelable code generator快捷实现parcelable代码，可直接插入 2.GsonFormat操作：Alt+insert打开插件列表或者直接Alt+s可根据json数据快速生成bean类">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/98d02ab9ea369245f5d2eeab6711d0c1?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/82e5d0673234e779ab389a0c7922fb42?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/a4148e7a443bd5dd5bd00e03eb5f9f20?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/27f96adbda7279730afa3fab82e4ce81?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/a7eb35adc40bdb71148e093f649a6b36?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/0e5d9f014575f544186822d22d383bcf?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/8c7f041cd178ddc84eccb0a47e519fb7?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/34048159f1fde4aaaf18804437443fa1?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/425fd609d699973aa0db9d4a3b0476dc.png?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/44ff1a3f31619103c3d890a2a6c94fa4?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/3e03cfa9d2960d823c1312d4d7cdb23f.png?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/ddffda4b86d4cf142a16ea6dcd10eefe.png?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/c693768d1e8ec27ebe75217f4a25371f.png?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/e549d4227ddf239420ad88ae6caf191b?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/ebbfa9b24223ae82cbd16b46296cbbfe?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/a2c9a53f26b8d7cf202bf4e899225fe4?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/b04faa5ff948ca6a853604d0d245fcb7?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/daca41d8992b655910e7ae9d1158604f?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/be103e15aefec46780b0d9935b5958a8.gif?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/bf90f69a0c4f14fb96362199a8b8264a.png?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/7e69ac767b94640a9b6116ba6c78ca66?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/bf1b0ae2ff1fbac5d23a7022a3b87194?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/a55022bd6df69cca9aece3f50172d7bc?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/a518aa197e7902a7473fd16c5430afaa.png?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/c644e4bcbb86c6867fdd06875ef8753f?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/1482fe607ae3c8fc5df3a91508fbd35a?imageslim">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/2/12/7d3cc4a54d2adaaed9d495413eabf1c3.gif?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:updated_time" content="2021-01-15T09:16:15.360Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android开发（四）- 插件整理">
+<meta name="twitter:description" content="Android Studio 插件整理（多方收集，持续更新~)插件安装：setting&amp;gt;plugins&amp;gt;Browse Repositories 开发工具插件1.Android Parcelable code generator快捷实现parcelable代码，可直接插入 2.GsonFormat操作：Alt+insert打开插件列表或者直接Alt+s可根据json数据快速生成bean类">
+<meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2017/2/12/98d02ab9ea369245f5d2eeab6711d0c1?imageslim">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/AaronYang23.github.io/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://aaronyang23.github.io/2018/09/05/Android/环境配置/Android开发（四）-插件整理/">
+
+
+
+
+
+  <title>Android开发（四）- 插件整理 | ArronYang</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+	<a href="https://github.com/AaronYang23" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	</div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/AaronYang23.github.io/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ArronYang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/AaronYang23.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/AaronYang23.github.io/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/AaronYang23.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/AaronYang23.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/AaronYang23.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://aaronyang23.github.io/AaronYang23.github.io/2018/09/05/Android/环境配置/Android开发（四）-插件整理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AaronYang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/AaronYang23.github.io/images/blogheadiamge.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ArronYang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Android开发（四）- 插件整理</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-05T00:00:00+08:00">
+                2018-09-05
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2021-01-15T17:16:15+08:00">
+                2021-01-15
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/AaronYang23.github.io/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  967
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Android-Studio-插件整理（多方收集，持续更新"><a href="#Android-Studio-插件整理（多方收集，持续更新" class="headerlink" title="Android Studio 插件整理（多方收集，持续更新~)"></a>Android Studio 插件整理（多方收集，持续更新~)</h1><p>插件安装：setting&gt;plugins&gt;Browse Repositories</p>
+<h2 id="开发工具插件"><a href="#开发工具插件" class="headerlink" title="开发工具插件"></a>开发工具插件</h2><h3 id="1-Android-Parcelable-code-generator"><a href="#1-Android-Parcelable-code-generator" class="headerlink" title="1.Android Parcelable code generator"></a>1.Android Parcelable code generator</h3><p>快捷实现parcelable代码，可直接插入</p>
+<h3 id="2-GsonFormat"><a href="#2-GsonFormat" class="headerlink" title="2.GsonFormat"></a>2.GsonFormat</h3><p>操作：Alt+insert打开插件列表或者直接Alt+s<br>可根据json数据快速生成bean类<br> <img src="https://user-gold-cdn.xitu.io/2017/2/12/98d02ab9ea369245f5d2eeab6711d0c1?imageslim" alt></p>
+<h3 id="3-ButterKnife几个插件"><a href="#3-ButterKnife几个插件" class="headerlink" title="3.ButterKnife几个插件"></a>3.ButterKnife几个插件</h3><h4 id="3-1Android-ButterKnife-Zelezny"><a href="#3-1Android-ButterKnife-Zelezny" class="headerlink" title="3.1Android ButterKnife Zelezny"></a>3.1Android ButterKnife Zelezny</h4><p>配合butterknife使用快速注解<br><img src="https://user-gold-cdn.xitu.io/2017/2/12/82e5d0673234e779ab389a0c7922fb42?imageslim" alt></p>
+<h4 id="3-2RemoveButterKnife"><a href="#3-2RemoveButterKnife" class="headerlink" title="3.2RemoveButterKnife"></a>3.2RemoveButterKnife</h4><p>移除butterknife代码<br>当我们有一些代码需要拿到其他项目使用，如果不能使用butterknife，这时候，我们需要从注解改回findviewbyid</p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/2/12/a4148e7a443bd5dd5bd00e03eb5f9f20?imageslim" alt></p>
+<h4 id="3-Android-ButterKnife-Plugin-Plus"><a href="#3-Android-ButterKnife-Plugin-Plus" class="headerlink" title="3.Android-ButterKnife-Plugin-Plus"></a>3.<a href="https://github.com/OriginalLove/Android-ButterKnife-Plugin-Plus" target="_blank" rel="noopener">Android-ButterKnife-Plugin-Plus</a></h4><p>1、自由选择是否在当前类中对ButterKnife进行初始化，避免了原版本只要使用插件初始化控件会自动在onCreate中进行ButterKnife.bind(this)的尴尬。在基类中进行ButterKnife的初始化，不必要每个类中都要初始化，对开发框架的搭建更加方便。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/2/12/27f96adbda7279730afa3fab82e4ce81?imageslim" alt><br>2、在Android Studio的设置界面，对在当前类中是否强制初始化提供了默认值设置，这样就可以让插件使用更符合自己的操作习惯。<br><img src="https://user-gold-cdn.xitu.io/2017/2/12/a7eb35adc40bdb71148e093f649a6b36?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt></p>
+<h3 id="4-GradleDependenciesHelperPlugin"><a href="#4-GradleDependenciesHelperPlugin" class="headerlink" title="4.GradleDependenciesHelperPlugin"></a>4.GradleDependenciesHelperPlugin</h3><p>maven gradle 依赖支持自动补全</p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/2/12/0e5d9f014575f544186822d22d383bcf?imageslim" alt></p>
+<h3 id="5-JsonOnlineViewer"><a href="#5-JsonOnlineViewer" class="headerlink" title="5.JsonOnlineViewer"></a>5.JsonOnlineViewer</h3><p>在Android Studio中请求、调试接口</p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/2/12/8c7f041cd178ddc84eccb0a47e519fb7?imageslim" alt></p>
+<h3 id="6-AndroidProguardPlugin"><a href="#6-AndroidProguardPlugin" class="headerlink" title="6.AndroidProguardPlugin"></a>6.AndroidProguardPlugin</h3><p>键生成项目混淆代码插件,部分第三方项目的混淆还未添加完全<br><img src="https://user-gold-cdn.xitu.io/2017/2/12/34048159f1fde4aaaf18804437443fa1?imageslim" alt></p>
+<h3 id="7-ignore"><a href="#7-ignore" class="headerlink" title="7..ignore"></a>7..ignore</h3><p>git 配置.ignore文件插件</p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/2/12/425fd609d699973aa0db9d4a3b0476dc.png?imageslim" alt></p>
+<h3 id="8-PermissionsDispatcher-plugin"><a href="#8-PermissionsDispatcher-plugin" class="headerlink" title="8.PermissionsDispatcher plugin"></a>8.PermissionsDispatcher plugin</h3><p>自动生成6.0权限的代码</p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/2/12/44ff1a3f31619103c3d890a2a6c94fa4?imageslim" alt></p>
+<h3 id="9-SingletonTest"><a href="#9-SingletonTest" class="headerlink" title="9.SingletonTest"></a>9.SingletonTest</h3><p>快速生成单例模式的预设<br><img src="https://user-gold-cdn.xitu.io/2017/2/12/3e03cfa9d2960d823c1312d4d7cdb23f.png?imageslim" alt><br><img src="https://user-gold-cdn.xitu.io/2017/2/12/ddffda4b86d4cf142a16ea6dcd10eefe.png?imageslim" alt><br><img src="https://user-gold-cdn.xitu.io/2017/2/12/c693768d1e8ec27ebe75217f4a25371f.png?imageslim" alt></p>
+<h3 id="10-jRebel-For-Android"><a href="#10-jRebel-For-Android" class="headerlink" title="10.jRebel For Android"></a>10.jRebel For Android</h3><p>不仅能够做到UI布局的实时预览，它甚至做到了让你更改java代码后就能实时替换apk中的类文件，达到应用实时刷新，官网的介绍是：Skip build, install and run，因此它可以节约我们很多很多的时间，它的效果也十分不错。<br><img src="https://user-gold-cdn.xitu.io/2017/2/12/e549d4227ddf239420ad88ae6caf191b?imageslim" alt><br><img src="https://user-gold-cdn.xitu.io/2017/2/12/ebbfa9b24223ae82cbd16b46296cbbfe?imageslim" alt></p>
+<h3 id="11-android-strings-search-plugin"><a href="#11-android-strings-search-plugin" class="headerlink" title="11.android-strings-search-plugin"></a>11.android-strings-search-plugin</h3><p>通过输入文字找到strings.xml资源的插件</p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/2/12/a2c9a53f26b8d7cf202bf4e899225fe4?imageslim" alt></p>
+<h2 id="调试插件"><a href="#调试插件" class="headerlink" title="调试插件"></a>调试插件</h2><h3 id="12-genymotion"><a href="#12-genymotion" class="headerlink" title="12.genymotion"></a>12.genymotion</h3><p>配合genymotion模拟器<br><img src="https://user-gold-cdn.xitu.io/2017/2/12/b04faa5ff948ca6a853604d0d245fcb7?imageslim" alt></p>
+<h3 id="13-ADB-WIFI"><a href="#13-ADB-WIFI" class="headerlink" title="13.ADB WIFI"></a>13.ADB WIFI</h3><p>使用wifi无线调试你的app，无需root权限<br>也可参考以下文章：<br><a href="https://www.jianshu.com/p/21d1b65d92a4" target="_blank" rel="noopener">Android wifi无线调试App新玩法ADB WIFI</a></p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/2/12/daca41d8992b655910e7ae9d1158604f?imageslim" alt></p>
+<h3 id="14-AndroidWiFiADB"><a href="#14-AndroidWiFiADB" class="headerlink" title="14.AndroidWiFiADB"></a>14.AndroidWiFiADB</h3><p>无线调试应用<br><img src="https://user-gold-cdn.xitu.io/2017/2/12/be103e15aefec46780b0d9935b5958a8.gif?imageslim" alt><br><img src="https://user-gold-cdn.xitu.io/2017/2/12/bf90f69a0c4f14fb96362199a8b8264a.png?imageslim" alt></p>
+<h3 id="15-LeakCanary"><a href="#15-LeakCanary" class="headerlink" title="15.LeakCanary"></a>15.LeakCanary</h3><p>在开发阶段检测出内存泄露的问题<br><a href="https://www.liaohuqiu.net/cn/posts/leak-canary-read-me/" target="_blank" rel="noopener">使用说明</a></p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/2/12/7e69ac767b94640a9b6116ba6c78ca66?imageslim" alt></p>
+<h3 id="16-smali"><a href="#16-smali" class="headerlink" title="16.smali"></a>16.<a href="https://github.com/JesusFreke/smali/wiki/smalidea" target="_blank" rel="noopener">smali</a></h3><p>smali代码调试插件</p>
+<hr>
+<h2 id="界面-amp-风格-amp-个性化插件"><a href="#界面-amp-风格-amp-个性化插件" class="headerlink" title="界面&amp;风格&amp;个性化插件"></a>界面&amp;风格&amp;个性化插件</h2><h3 id="16-CodeGlance"><a href="#16-CodeGlance" class="headerlink" title="16.CodeGlance"></a>16.CodeGlance</h3><p>在右边可以预览代码，实现快速定位<br><img src="https://user-gold-cdn.xitu.io/2017/2/12/bf1b0ae2ff1fbac5d23a7022a3b87194?imageslim" alt></p>
+<h3 id="17-Android-Resource-Usage-Count"><a href="#17-Android-Resource-Usage-Count" class="headerlink" title="17.Android Resource Usage Count"></a>17.<a href="https://github.com/niorgai/Android-Resource-Usage-Count" target="_blank" rel="noopener">Android Resource Usage Count</a></h3><p>统计资源文件中每个标签被引用的次数</p>
+<h3 id="18-folding-plugin"><a href="#18-folding-plugin" class="headerlink" title="18.folding-plugin"></a>18.folding-plugin</h3><p>对布局文件进行分组<br><img src="https://user-gold-cdn.xitu.io/2017/2/12/a55022bd6df69cca9aece3f50172d7bc?imageslim" alt></p>
+<h3 id="19-Material-Theme-UI"><a href="#19-Material-Theme-UI" class="headerlink" title="19.Material Theme UI"></a>19.Material Theme UI</h3><p>添加Material主题</p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/2/12/a518aa197e7902a7473fd16c5430afaa.png?imageslim" alt></p>
+<h3 id="20-CheckStyle-IDEA"><a href="#20-CheckStyle-IDEA" class="headerlink" title="20.CheckStyle-IDEA"></a>20.CheckStyle-IDEA</h3><p>CheckStyle-IDEA 是一个检查代码风格的插件，比如像命名约定，Javadoc，类设计等方面进行代码规范和风格的检查，你们可以遵从像Google Oracle 的Java 代码指南 ，当然也可以按照自己的规则来设置配置文件，从而有效约束你自己更好地遵循代码编写规范。</p>
+<h3 id="21-LayoutFormatter"><a href="#21-LayoutFormatter" class="headerlink" title="21.LayoutFormatter"></a>21.LayoutFormatter</h3><p>drakeet 开发一个一键格式化你的 XML 文件的 Android Studio 插件，至于为什么不用 Android Studio 自带的格式化功能而用这个插件，可以看下作者的一篇 Blog -&gt; 当我们谈 XML 布局文件代码的优雅性<br><img src="https://user-gold-cdn.xitu.io/2017/2/12/c644e4bcbb86c6867fdd06875ef8753f?imageslim" alt></p>
+<h3 id="22-Lifecycle-Sorter"><a href="#22-Lifecycle-Sorter" class="headerlink" title="22.Lifecycle Sorter"></a>22.Lifecycle Sorter</h3><p>可以根据Activity或者fragment的生命周期对其生命周期方法位置进行先后排序，快捷键Ctrl + alt + K<br><img src="https://user-gold-cdn.xitu.io/2017/2/12/1482fe607ae3c8fc5df3a91508fbd35a?imageslim" alt></p>
+<h2 id="其他拓展插件"><a href="#其他拓展插件" class="headerlink" title="其他拓展插件"></a>其他拓展插件</h2><h3 id="23-MVPHelper"><a href="#23-MVPHelper" class="headerlink" title="23.MVPHelper"></a>23.MVPHelper</h3><p>一款Intellj IDEA 和Android Studio的插件，可以为MVP生成接口以及实现类，解放双手。<br>具体请查看<a href="http://androidwing.net/index.php/27" target="_blank" rel="noopener">Android Studio插件之MVPHelper，一键生成MVP代码</a>一文</p>
+<p>1<a href="https://user-gold-cdn.xitu.io/2017/2/12/dccccc57ef12b27bea10e37101054f69.gif?imageslim" target="_blank" rel="noopener"></a></p>
+<h3 id="24-Matchmaker"><a href="#24-Matchmaker" class="headerlink" title="24.Matchmaker"></a>24.Matchmaker</h3><p>专为微信小程序开发的插件，目前可在 IntelliJ IDEA 中使用。它可以帮你完成重复机械无趣麻烦的绑定方法的过程，自动的将需要新建的方法注入到 js 文件中去。</p>
+<p><img src="https://user-gold-cdn.xitu.io/2017/2/12/7d3cc4a54d2adaaed9d495413eabf1c3.gif?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt></p>
+<h3 id="25-ECTranslation"><a href="#25-ECTranslation" class="headerlink" title="25.ECTranslation"></a>25.<a href="https://github.com/Skykai521/ECTranslation" target="_blank" rel="noopener">ECTranslation</a></h3><p>翻译插件,可以将英文翻译为中文：</p>
+<h3 id="26-AndroidSourceViewer"><a href="#26-AndroidSourceViewer" class="headerlink" title="26.AndroidSourceViewer"></a>26.<a href="https://github.com/pengwei1024/AndroidSourceViewer" target="_blank" rel="noopener">AndroidSourceViewer</a></h3><p>在线查看 Android 和 Java 指定版本源码:</p>
+<p>- </p>
+
+      
+    </div>
+    
+    
+    
+
+	<div>
+      
+        
+      
+	</div>
+	
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    AaronYang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://aaronyang23.github.io/2018/09/05/Android/环境配置/Android开发（四）-插件整理/" title="Android开发（四）- 插件整理">https://aaronyang23.github.io/2018/09/05/Android/环境配置/Android开发（四）-插件整理/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/AaronYang23.github.io/tags/Android环境配置/" rel="tag"># Android环境配置</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/AaronYang23.github.io/2018/09/04/Android/上线/多渠道打包/" rel="next" title="多渠道打包">
+                <i class="fa fa-chevron-left"></i> 多渠道打包
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/AaronYang23.github.io/2018/09/06/Android/基础/手势/禁用多点触控/" rel="prev" title="禁用多点触控">
+                禁用多点触控 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/AaronYang23.github.io/images/blogheadiamge.png" alt="AaronYang">
+            
+              <p class="site-author-name" itemprop="name">AaronYang</p>
+              <p class="site-description motion-element" itemprop="description">吾辈岂是蓬蒿人</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/AaronYang23.github.io/archives/">
+              
+                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/AaronYang23.github.io/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/AaronYang23.github.io/tags/index.html">
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/AaronYang23" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="aymiracle7@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.runoob.com/w3cnote" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Android-Studio-插件整理（多方收集，持续更新"><span class="nav-number">1.</span> <span class="nav-text">Android Studio 插件整理（多方收集，持续更新~)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开发工具插件"><span class="nav-number">1.1.</span> <span class="nav-text">开发工具插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Android-Parcelable-code-generator"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.Android Parcelable code generator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-GsonFormat"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.GsonFormat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-ButterKnife几个插件"><span class="nav-number">1.1.3.</span> <span class="nav-text">3.ButterKnife几个插件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1Android-ButterKnife-Zelezny"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">3.1Android ButterKnife Zelezny</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2RemoveButterKnife"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">3.2RemoveButterKnife</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Android-ButterKnife-Plugin-Plus"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">3.Android-ButterKnife-Plugin-Plus</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-GradleDependenciesHelperPlugin"><span class="nav-number">1.1.4.</span> <span class="nav-text">4.GradleDependenciesHelperPlugin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-JsonOnlineViewer"><span class="nav-number">1.1.5.</span> <span class="nav-text">5.JsonOnlineViewer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-AndroidProguardPlugin"><span class="nav-number">1.1.6.</span> <span class="nav-text">6.AndroidProguardPlugin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-ignore"><span class="nav-number">1.1.7.</span> <span class="nav-text">7..ignore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-PermissionsDispatcher-plugin"><span class="nav-number">1.1.8.</span> <span class="nav-text">8.PermissionsDispatcher plugin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-SingletonTest"><span class="nav-number">1.1.9.</span> <span class="nav-text">9.SingletonTest</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-jRebel-For-Android"><span class="nav-number">1.1.10.</span> <span class="nav-text">10.jRebel For Android</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-android-strings-search-plugin"><span class="nav-number">1.1.11.</span> <span class="nav-text">11.android-strings-search-plugin</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调试插件"><span class="nav-number">1.2.</span> <span class="nav-text">调试插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#12-genymotion"><span class="nav-number">1.2.1.</span> <span class="nav-text">12.genymotion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-ADB-WIFI"><span class="nav-number">1.2.2.</span> <span class="nav-text">13.ADB WIFI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-AndroidWiFiADB"><span class="nav-number">1.2.3.</span> <span class="nav-text">14.AndroidWiFiADB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-LeakCanary"><span class="nav-number">1.2.4.</span> <span class="nav-text">15.LeakCanary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-smali"><span class="nav-number">1.2.5.</span> <span class="nav-text">16.smali</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#界面-amp-风格-amp-个性化插件"><span class="nav-number">1.3.</span> <span class="nav-text">界面&amp;风格&amp;个性化插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#16-CodeGlance"><span class="nav-number">1.3.1.</span> <span class="nav-text">16.CodeGlance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-Android-Resource-Usage-Count"><span class="nav-number">1.3.2.</span> <span class="nav-text">17.Android Resource Usage Count</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-folding-plugin"><span class="nav-number">1.3.3.</span> <span class="nav-text">18.folding-plugin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-Material-Theme-UI"><span class="nav-number">1.3.4.</span> <span class="nav-text">19.Material Theme UI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20-CheckStyle-IDEA"><span class="nav-number">1.3.5.</span> <span class="nav-text">20.CheckStyle-IDEA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21-LayoutFormatter"><span class="nav-number">1.3.6.</span> <span class="nav-text">21.LayoutFormatter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-Lifecycle-Sorter"><span class="nav-number">1.3.7.</span> <span class="nav-text">22.Lifecycle Sorter</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他拓展插件"><span class="nav-number">1.4.</span> <span class="nav-text">其他拓展插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#23-MVPHelper"><span class="nav-number">1.4.1.</span> <span class="nav-text">23.MVPHelper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24-Matchmaker"><span class="nav-number">1.4.2.</span> <span class="nav-text">24.Matchmaker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#25-ECTranslation"><span class="nav-number">1.4.3.</span> <span class="nav-text">25.ECTranslation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#26-AndroidSourceViewer"><span class="nav-number">1.4.4.</span> <span class="nav-text">26.AndroidSourceViewer</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AaronYang</span>
+
+ <!--  隐藏这个字数统计
+ 
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">48.2k</span>
+  
+  -->
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+<!-- 新增访客统计代码 -->
+
+<div class="busuanzi-count">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      访问用户： <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 人
+    </span>
+    <div class="powered-by"></div>
+    <span class="site-uv">
+      <i class="fa fa-eye"></i>
+      访问次数： <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次
+    </span>
+    <!-- 博客字数统计 -->
+    <span class="site-pv">
+      <i class="fa fa-pencil"></i>
+      博客全站共： <span class="post-count">48.2k</span> 字
+    </span>
+</div>
+<!-- 新增访客统计代码 END-->
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/AaronYang23.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/AaronYang23.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/AaronYang23.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/AaronYang23.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/AaronYang23.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/AaronYang23.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/AaronYang23.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/AaronYang23.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/AaronYang23.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/AaronYang23.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/AaronYang23.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/AaronYang23.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/AaronYang23.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/AaronYang23.github.io/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+

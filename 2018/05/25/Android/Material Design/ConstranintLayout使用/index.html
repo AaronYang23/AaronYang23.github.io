@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/AaronYang23.github.io/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/AaronYang23.github.io/lib/pace/pace-theme-fill-left.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/AaronYang23.github.io/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/AaronYang23.github.io/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/AaronYang23.github.io/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/AaronYang23.github.io/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/AaronYang23.github.io/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/AaronYang23.github.io/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/AaronYang23.github.io/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="material design,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="ConstraintLayout ConstraintLayout，称为约束性布局，Google:2017I/O大会上重点推出来的功能，非常适合使用可视化的方式来编写界面,使用方式有点类似于RelativeLayout，可以当做是其升级版本。 扁平化设计，减少层级嵌套，加快布局速度 Android Studio3.0后已经默认xml根标签为ConstraintLayout  一、使用（一）定位 C">
+<meta name="keywords" content="material design">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ConstranintLayout">
+<meta property="og:url" content="https://aaronyang23.github.io/2018/05/25/Android/Material Design/ConstranintLayout使用/index.html">
+<meta property="og:site_name" content="ArronYang">
+<meta property="og:description" content="ConstraintLayout ConstraintLayout，称为约束性布局，Google:2017I/O大会上重点推出来的功能，非常适合使用可视化的方式来编写界面,使用方式有点类似于RelativeLayout，可以当做是其升级版本。 扁平化设计，减少层级嵌套，加快布局速度 Android Studio3.0后已经默认xml根标签为ConstraintLayout  一、使用（一）定位 C">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2552605-fcbaeb45150186d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/574">
+<meta property="og:image" content="https://img-blog.csdn.net/20170131144908512">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2552605-dd99a16344da8c4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/500">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2552605-1786e81381fb0c1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
+<meta property="og:updated_time" content="2021-01-23T06:40:16.654Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ConstranintLayout">
+<meta name="twitter:description" content="ConstraintLayout ConstraintLayout，称为约束性布局，Google:2017I/O大会上重点推出来的功能，非常适合使用可视化的方式来编写界面,使用方式有点类似于RelativeLayout，可以当做是其升级版本。 扁平化设计，减少层级嵌套，加快布局速度 Android Studio3.0后已经默认xml根标签为ConstraintLayout  一、使用（一）定位 C">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/2552605-fcbaeb45150186d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/574">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/AaronYang23.github.io/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://aaronyang23.github.io/2018/05/25/Android/Material Design/ConstranintLayout使用/">
+
+
+
+
+
+  <title>ConstranintLayout | ArronYang</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband">
+	<a href="https://github.com/AaronYang23" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+	</div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/AaronYang23.github.io/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ArronYang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/AaronYang23.github.io/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/AaronYang23.github.io/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/AaronYang23.github.io/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/AaronYang23.github.io/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/AaronYang23.github.io/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://aaronyang23.github.io/AaronYang23.github.io/2018/05/25/Android/Material Design/ConstranintLayout使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AaronYang">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/AaronYang23.github.io/images/blogheadiamge.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ArronYang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">ConstranintLayout</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-25T08:58:54+08:00">
+                2018-05-25
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2021-01-23T14:40:16+08:00">
+                2021-01-23
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/AaronYang23.github.io/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="ConstraintLayout"><a href="#ConstraintLayout" class="headerlink" title="ConstraintLayout"></a>ConstraintLayout</h1><ul>
+<li>ConstraintLayout，称为约束性布局，Google:2017I/O大会上重点推出来的功能，非常适合使用可视化的方式来编写界面,使用方式有点类似于RelativeLayout，可以当做是其升级版本。</li>
+<li>扁平化设计，减少层级嵌套，加快布局速度</li>
+<li>Android Studio3.0后已经默认xml根标签为ConstraintLayout</li>
+</ul>
+<h2 id="一、使用"><a href="#一、使用" class="headerlink" title="一、使用"></a>一、使用</h2><h3 id="（一）定位"><a href="#（一）定位" class="headerlink" title="（一）定位"></a>（一）定位</h3><blockquote>
+<p>ConstraintLayout 能够灵活地定位和调整子View的大小，子 View 依靠约束关系来确定位置。在一个约束关系中，需要有一个 Source（源）以及一个 Target（目标），Source 的位置依赖于 Target，可以理解为“通过约束关系，Source 与 Target链接在了一起，Source 相对于 Target 的位置便是固定的了</p>
+</blockquote>
+<p>参照。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2552605-fcbaeb45150186d9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/574" alt></p>
+<p>每个控件有四个方向的约束，根据这四个方向的属性设置其位置</p>
+<p><img src="https://img-blog.csdn.net/20170131144908512" alt></p>
+<blockquote>
+<p>layout_constraintXXX_toYYYOf 格式的属性，表示View A”的方向 XXX 置于 “View B”的方向 YYY 。当中，View B 可以是父容器即 ConstraintLayout ，用“parent”来表示，如：app：layout_constraintRight_toLeftOf=”@+id/text”,表示此控件在text的左边</p>
+</blockquote>
+<pre><code>app:layout_constraintBaseline_toBaselineOf （View A 内部文字与 View B 内部文字对齐）
+app:layout_constraintLeft_toLeftOf （View A 与 View B 左对齐）
+app:layout_constraintLeft_toRightOf （View A 的左边置于 View B 的右边）
+app:layout_constraintRight_toLeftOf （View A 的右边置于 View B 的左边）
+app:layout_constraintRight_toRightOf
+app:layout_constraintTop_toTopOf
+app:layout_constraintTop_toBottomOf
+app:layout_constraintBottom_toTopOf
+app:layout_constraintBottom_toBottomOf
+app:layout_constraintStart_toEndOf
+app:layout_constraintStart_toStartOf
+app:layout_constraintEnd_toStartOf
+app:layout_constraintEnd_toEndOf
+
+水平居中：
+app:layout_constraintLeft_toLeftOf=&quot;parent&quot;
+app:layout_constraintRight_toRightOf=&quot;parent&quot;
+
+垂直居中：
+app:layout_constraintTop_toTopOf=&quot;parent&quot;
+app:layout_constraintBottom_toBottomOf=&quot;parent&quot;
+</code></pre><blockquote>
+<p>约束强度</p>
+</blockquote>
+<p>依靠 layout_constraintHorizontal_bias 和 layout_constraintVertical_bias 两个属性，即用来设置控件在水平和垂直方向的偏移量</p>
+<h3 id="（二）指示线"><a href="#（二）指示线" class="headerlink" title="（二）指示线"></a>（二）指示线</h3><p>当需要一个任意位置的锚点时，可以使用指示线（Guideline）来帮助定位，指示线实际上是 View 的子类，使用方式和普通的 View 相同，但指示线有着如下的特殊属性：</p>
+<ul>
+<li>宽度和高度均为0</li>
+<li>可见性为 View.GONE，只是在布局的时候帮助其他view做约束来定位的，不会出现在实际页面中</li>
+<li>可以选择使用百分比或实际距离来设置指示线的偏移位置，此外也可以通过 orientation 属性来设置指示线的方向</li>
+</ul>
+<pre><code>&lt;! --android:orientation
+     app:layout_constraintGuide_end
+     app:layout_constraintGuide_begin  -&gt;
+
+&lt;android.support.constraint.Guideline
+    android:id=&quot;@+id/guideline1&quot;
+       android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:orientation=&quot;vertical&quot;
+    app:layout_constraintGuide_percent=&quot;0.5&quot; /&gt;
+
+&lt;android.support.constraint.Guideline
+    android:id=&quot;@+id/guideline2&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;wrap_content&quot;
+    android:orientation=&quot;horizontal&quot;
+    app:layout_constraintGuide_begin=&quot;100dp&quot; /&gt;
+</code></pre><h3 id="（三）Chains链"><a href="#（三）Chains链" class="headerlink" title="（三）Chains链"></a>（三）Chains链</h3><blockquote>
+<p>如果几个View之间通过双向连接而互相约束对方的位置，那么将其视为链条,链条的最左侧视为链头，通过设置链头来决定这个链的展示效果。</p>
+</blockquote>
+<p>1、我对他的理解是控制多个view使用不同的连接方式来分配剩余空间，当做weight的加强版</p>
+<p>链条可以分为水平和竖直，对应的方向分配此方向上的空间分布，用layout_constraintHorizontal_chainStyle和layout_constraintVertical_chainStyle两个属性来设置，属性值有三种,属性值设置给链头的View：</p>
+<pre><code>layout_constraintHorizontal_chainStyle，layout_constraintVertical_chainStyle
+ 属性值设置给链头的View：
+spread   ：均匀展开，居中并且均分空白空间，根据控件宽高属性值为0或者自适应有不同效果，可理解为weight并居中
+spread_inside  ：可理解为weight链头链尾贴边，其余居中
+packed     ：可理解为view居中相连
+默认为spread
+</code></pre><p>各个参数值的效果:</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2552605-dd99a16344da8c4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt></p>
+<p>2、效果展示（默认的spread，weight效果）:</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;android.support.constraint.ConstraintLayout
+xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+android:layout_width=&quot;match_parent&quot;
+android:layout_height=&quot;match_parent&quot;
+tools:context=&quot;com.czy.constraintlayoutdemo.MainActivity&quot;&gt;
+
+&lt;TextView
+    android:id=&quot;@+id/tv1&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;50dp&quot;
+    android:background=&quot;#f5ec7e&quot;
+    android:gravity=&quot;center&quot;
+    android:text=&quot;Hello World!&quot;
+    app:layout_constraintLeft_toLeftOf=&quot;parent&quot;
+    app:layout_constraintRight_toLeftOf=&quot;@+id/tv2&quot;
+    app:layout_constraintTop_toTopOf=&quot;parent&quot;
+    app:layout_constraintHorizontal_chainStyle=&quot;spread&quot;/&gt;
+
+&lt;TextView
+    android:id=&quot;@+id/tv2&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;50dp&quot;
+    android:layout_marginTop=&quot;0dp&quot;
+    android:background=&quot;#ff538c&quot;
+    android:gravity=&quot;center&quot;
+    android:text=&quot;Hello World!&quot;
+    app:layout_constraintLeft_toRightOf=&quot;@+id/tv1&quot;
+    app:layout_constraintRight_toLeftOf=&quot;@+id/tv3&quot;
+    app:layout_constraintTop_toTopOf=&quot;parent&quot;/&gt;
+
+&lt;TextView
+    android:id=&quot;@+id/tv3&quot;
+    android:layout_width=&quot;wrap_content&quot;
+    android:layout_height=&quot;50dp&quot;
+    android:background=&quot;#41c0ff&quot;
+    android:gravity=&quot;center&quot;
+    android:text=&quot;Hello World!&quot;
+    app:layout_constraintLeft_toRightOf=&quot;@+id/tv2&quot;
+    app:layout_constraintRight_toRightOf=&quot;parent&quot;
+    app:layout_constraintTop_toTopOf=&quot;parent&quot;/&gt;
+
+&lt;/android.support.constraint.ConstraintLayout&gt;
+</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/2552605-1786e81381fb0c1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt></p>
+<h3 id="（四）宽高比"><a href="#（四）宽高比" class="headerlink" title="（四）宽高比"></a>（四）宽高比</h3><h4 id="控件自身宽高比"><a href="#控件自身宽高比" class="headerlink" title="控件自身宽高比"></a>控件自身宽高比</h4><pre><code>app:layout_constraintDimensionRatio 
+</code></pre><p>1、设置控件的宽高比例,需要至少设置宽度或者高度为0</p>
+<p>2、如果宽度和高度都是 0dp ，系统会使用满足所有约束条件和宽高比率值的最大尺寸,可理解为match-parent</p>
+<p>3、如果要根据其中一个尺寸来约束另外一个尺寸，则可以在比率值的前面添加 W 或者 H 来指明约束宽度或者高度<br>如：</p>
+<pre><code>app:layout_constraintDimensionRatio=&quot;2:1&quot;      //宽高比为2：1
+app:layout_constraintDimensionRatio=&quot;h,2:1&quot;    //表示以高度为基准，宽高比是2：1，展示结果是宽度是高度的2倍
+app:layout_constraintDimensionRatio=&quot;W,2:1&quot;    //表示以宽度为基准，展示结果是高度是宽度的2倍
+</code></pre><h4 id="子控件宽高比"><a href="#子控件宽高比" class="headerlink" title="子控件宽高比"></a>子控件宽高比</h4><p>像LinearLayout 一样为子控件设置 layout_weight 属性，从而控件子控件之间的宽高占比</p>
+<pre><code>app:layout_constraintHorizontal_weight
+app:layout_constraintVertical_weight
+</code></pre><h2 id="二、属性记录："><a href="#二、属性记录：" class="headerlink" title="二、属性记录："></a>二、属性记录：</h2><pre><code>app:layout_constraintBaseline_toBaselineOf （View A 内部文字与 View B 内部文字对齐）
+app:layout_constraintLeft_toLeftOf （View A 与 View B 左对齐）
+app:layout_constraintLeft_toRightOf （View A 的左边置于 View B 的右边）
+app:layout_constraintRight_toLeftOf （View A 的右边置于 View B 的左边）
+app:layout_constraintRight_toRightOf
+app:layout_constraintTop_toTopOf
+app:layout_constraintTop_toBottomOf
+app:layout_constraintBottom_toTopOf
+app:layout_constraintBottom_toBottomOf
+app:layout_constraintStart_toEndOf
+app:layout_constraintStart_toStartOf
+app:layout_constraintEnd_toStartOf
+app:layout_constraintEnd_toEndOf
+
+水平居中：
+app:layout_constraintLeft_toLeftOf=&quot;parent&quot;
+app:layout_constraintRight_toRightOf=&quot;parent&quot;
+
+垂直居中：
+app:layout_constraintTop_toTopOf=&quot;parent&quot;
+app:layout_constraintBottom_toBottomOf=&quot;parent&quot;
+
+宽高比：
+app:layout_constraintVertical_weight
+app:layout_constraintHorizontal_weight
+
+app:layout_constraintDimensionRatio=&quot;h,2:1&quot;    //表示以高度为基准，宽高比是2：1，展示结果是宽度是高度的2倍
+app:layout_constraintDimensionRatio=&quot;W,2:1&quot;    //表示以宽度为基准，展示结果是高度是宽度的2倍
+
+偏移：
+layout_constraintHorizontal_bias
+layout_constraintVertical_bias
+
+Guideline:
+android:orientation
+app:layout_constraintGuide_begin
+app:layout_constraintGuide_end
+app:layout_constraintGuide_percent
+
+Chains:
+layout_constraintVertical_chainStyle
+layout_constraintVertical_chainStyle
+</code></pre><h2 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h2><p>这里只列出水平方向，竖直方向同理<br>两个控件底部对齐: </p>
+<pre><code>app:layout_constraintBaseline_toBaselineOf=&quot;&quot;
+</code></pre><p>两个控件中心点对齐(有点类似控件居中的写法，锁定一个控件)：</p>
+<pre><code>app:layout_constraintTop_toTopOf=&quot;@+id/view2&quot;
+app:layout_constraintBottom_toBottomOf=&quot;@id/view2&quot;
+</code></pre><h2 id="百分比布局"><a href="#百分比布局" class="headerlink" title="百分比布局"></a>百分比布局</h2><p>++宽高设置为wrapcontent 与0dp 与matchparent 区别</p>
+<h2 id="三、内容参照："><a href="#三、内容参照：" class="headerlink" title="三、内容参照："></a>三、内容参照：</h2><p>基本属性和操作：<a href="https://www.jianshu.com/p/b884b8c46584" target="_blank" rel="noopener">Android ConstraintLayout 使用详解</a></p>
+<p>可视化操作：</p>
+<ul>
+<li><a href="https://blog.csdn.net/guolin_blog/article/details/53122387" target="_blank" rel="noopener">郭霖的专栏:ConstraintLayout完全解析</a></li>
+<li><a href="https://www.cnblogs.com/hehe520/p/6329857.html" target="_blank" rel="noopener">ConstraintLayout</a></li>
+<li><a href="https://biaomingzhong.github.io/2017/constraintlayout-tricks-centring/" target="_blank" rel="noopener">ConstraintLayout深入系列之中心点对齐</a></li>
+</ul>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>1、额外注意，添加约束的时候要注意约束的对象会不会gone，一旦gone就会出现布局混乱了。所以约束的对象尽量要是一直可见的。实在做不到的时候也只能设置一个同大小的空view去占位了</p>
+
+      
+    </div>
+    
+    
+    
+
+	<div>
+      
+        
+      
+	</div>
+	
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    AaronYang
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://aaronyang23.github.io/2018/05/25/Android/Material Design/ConstranintLayout使用/" title="ConstranintLayout">https://aaronyang23.github.io/2018/05/25/Android/Material Design/ConstranintLayout使用/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/AaronYang23.github.io/tags/material-design/" rel="tag"># material design</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/AaronYang23.github.io/2018/05/19/Android/基础/自定义/自定义组合控件/" rel="next" title="自定义控件-组合控件">
+                <i class="fa fa-chevron-left"></i> 自定义控件-组合控件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/AaronYang23.github.io/2018/06/10/Android/UI/widget/native/WebView（一）/" rel="prev" title="WebView（一）">
+                WebView（一） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/AaronYang23.github.io/images/blogheadiamge.png" alt="AaronYang">
+            
+              <p class="site-author-name" itemprop="name">AaronYang</p>
+              <p class="site-description motion-element" itemprop="description">吾辈岂是蓬蒿人</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/AaronYang23.github.io/archives/">
+              
+                  <span class="site-state-item-count">85</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/AaronYang23.github.io/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/AaronYang23.github.io/tags/index.html">
+                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/AaronYang23" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="aymiracle7@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.runoob.com/w3cnote" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ConstraintLayout"><span class="nav-number">1.</span> <span class="nav-text">ConstraintLayout</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、使用"><span class="nav-number">1.1.</span> <span class="nav-text">一、使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（一）定位"><span class="nav-number">1.1.1.</span> <span class="nav-text">（一）定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（二）指示线"><span class="nav-number">1.1.2.</span> <span class="nav-text">（二）指示线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（三）Chains链"><span class="nav-number">1.1.3.</span> <span class="nav-text">（三）Chains链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（四）宽高比"><span class="nav-number">1.1.4.</span> <span class="nav-text">（四）宽高比</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#控件自身宽高比"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">控件自身宽高比</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子控件宽高比"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">子控件宽高比</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、属性记录："><span class="nav-number">1.2.</span> <span class="nav-text">二、属性记录：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对齐"><span class="nav-number">1.3.</span> <span class="nav-text">对齐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#百分比布局"><span class="nav-number">1.4.</span> <span class="nav-text">百分比布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、内容参照："><span class="nav-number">1.5.</span> <span class="nav-text">三、内容参照：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">1.6.</span> <span class="nav-text">补充</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AaronYang</span>
+
+ <!--  隐藏这个字数统计
+ 
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">48.2k</span>
+  
+  -->
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+<!-- 新增访客统计代码 -->
+
+<div class="busuanzi-count">
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      访问用户： <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 人
+    </span>
+    <div class="powered-by"></div>
+    <span class="site-uv">
+      <i class="fa fa-eye"></i>
+      访问次数： <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次
+    </span>
+    <!-- 博客字数统计 -->
+    <span class="site-pv">
+      <i class="fa fa-pencil"></i>
+      博客全站共： <span class="post-count">48.2k</span> 字
+    </span>
+</div>
+<!-- 新增访客统计代码 END-->
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/AaronYang23.github.io/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/AaronYang23.github.io/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/AaronYang23.github.io/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/AaronYang23.github.io/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/AaronYang23.github.io/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/AaronYang23.github.io/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/AaronYang23.github.io/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/AaronYang23.github.io/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/AaronYang23.github.io/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/AaronYang23.github.io/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/AaronYang23.github.io/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/AaronYang23.github.io/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/AaronYang23.github.io/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/AaronYang23.github.io/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+
+
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
+
