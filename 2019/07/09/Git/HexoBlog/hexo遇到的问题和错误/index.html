@@ -95,7 +95,7 @@
 <meta property="og:description" content="Hexo错误记录用不了hexo指令只能运行hexo v指令，其余均为提示 Useage:hexo，注意hexo指令是要运行在git bash 中，不是cmd中。 hexo g错误收录 YAMLException: end of the stream or a document separator is expected at line x, column y:  缺少分隔符，一般都是因为缺少空格">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/AaronYang23/BlogImages/blob/main/hexo/hexo1.png?raw=true">
-<meta property="og:updated_time" content="2021-01-23T09:04:12.647Z">
+<meta property="og:updated_time" content="2021-01-23T09:16:12.529Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo错误记录">
 <meta name="twitter:description" content="Hexo错误记录用不了hexo指令只能运行hexo v指令，其余均为提示 Useage:hexo，注意hexo指令是要运行在git bash 中，不是cmd中。 hexo g错误收录 YAMLException: end of the stream or a document separator is expected at line x, column y:  缺少分隔符，一般都是因为缺少空格">
@@ -351,7 +351,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-01-23T17:04:12+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2021-01-23T17:16:12+08:00">
                 2021-01-23
               </time>
             
@@ -406,7 +406,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  681
+                  723
                 </span>
               
 
@@ -468,10 +468,17 @@
 <p>处理：降低node版本</p>
 <ul>
 <li>1.卸载干净电脑的node.js</li>
-<li>2.安装node管理工具nvm</li>
-<li>3.通过nvm操作安装指定版本<br>  注意：为了避免安装失败，最好在安装指定node.js之前先去设置从淘宝的镜像路径安装</li>
-<li>4.安装完成后通过use命令和-v命令查看是否启用和安装，后续就是hexo的相关处理了</li>
+<li>2.安装node管理工具nvm  — <a href="https://github.com/coreybutler/nvm-windows/releases" target="_blank" rel="noopener">官方下载nvm-setup.zip</a> </li>
+<li>3.通过nvm操作安装指定版本<ul>
+<li>注意: 为了避免安装失败，最好在安装指定node.js之前先去设置从淘宝的镜像路径安装</li>
 </ul>
+</li>
+<li>4.安装完成后通过use命令和-v命令查看是否启用和安装，后续就是hexo的相关处理了<ul>
+<li>注: 如果hexo仓库已经init过了的话只要安装好hexo就可以用了</li>
+</ul>
+</li>
+</ul>
+<p>参考：<br>    <a href="https://blog.csdn.net/wsjzzcbq/article/details/89576173" target="_blank" rel="noopener">nvm 配置淘宝镜像</a><br>    <a href="https://www.jb51.net/article/202124.htm" target="_blank" rel="noopener">nvm管理node.js</a></p>
 
       
     </div>
@@ -737,7 +744,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">48.2k</span>
+    <span title="Site words total count">48.3k</span>
   
   -->
 </div>
@@ -771,7 +778,7 @@
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">48.2k</span> 字
+      博客全站共： <span class="post-count">48.3k</span> 字
     </span>
 </div>
 <!-- 新增访客统计代码 END-->

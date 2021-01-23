@@ -95,7 +95,7 @@
 <meta property="og:description" content="使用Hexo+Github搭建博客总结一个真正意思上的博客自然是需要在互联网的任何一个地方都能够被访问到，目前最简单的方式就是利用GitHub Pages来实现静态博客的托管。 搭建步骤1.前提环境： 安装Node.js + Git 注册Github账号  2、安装并初始化hexo:npm install -g hexo    //安装hexo     hexo init //初始化,选中一个作为">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p03vhocz1.bkt.clouddn.com/091117267843619.gif">
-<meta property="og:updated_time" content="2021-01-22T10:13:43.073Z">
+<meta property="og:updated_time" content="2021-01-23T09:19:11.110Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客搭建">
 <meta name="twitter:description" content="使用Hexo+Github搭建博客总结一个真正意思上的博客自然是需要在互联网的任何一个地方都能够被访问到，目前最简单的方式就是利用GitHub Pages来实现静态博客的托管。 搭建步骤1.前提环境： 安装Node.js + Git 注册Github账号  2、安装并初始化hexo:npm install -g hexo    //安装hexo     hexo init //初始化,选中一个作为">
@@ -351,8 +351,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-01-22T18:13:43+08:00">
-                2021-01-22
+              <time title="更新于" itemprop="dateModified" datetime="2021-01-23T17:19:11+08:00">
+                2021-01-23
               </time>
             
           </span>
@@ -500,7 +500,7 @@ root 下面应该设置成 /你的项目名 而不是/
 </code></pre></li>
 <li>发布成功后浏览器直接访问<a href="https://aaronyang23.github.io/就可以看到博客内容了">https://aaronyang23.github.io/就可以看到博客内容了</a></li>
 </ul>
-<h3 id="7、设置SSH-安全外壳协议-，此操作可以放于步骤4和步骤5之间"><a href="#7、设置SSH-安全外壳协议-，此操作可以放于步骤4和步骤5之间" class="headerlink" title="7、设置SSH(安全外壳协议)，此操作可以放于步骤4和步骤5之间"></a>7、设置SSH(安全外壳协议)，此操作可以放于步骤4和步骤5之间</h3><blockquote>
+<h3 id="7、设置SSH-安全外壳协议-，此操作可以放于步骤4和步骤5之间，主要就是避免push和deploy需要的账户验证"><a href="#7、设置SSH-安全外壳协议-，此操作可以放于步骤4和步骤5之间，主要就是避免push和deploy需要的账户验证" class="headerlink" title="7、设置SSH(安全外壳协议)，此操作可以放于步骤4和步骤5之间，主要就是避免push和deploy需要的账户验证"></a>7、设置SSH(安全外壳协议)，此操作可以放于步骤4和步骤5之间，主要就是避免push和deploy需要的账户验证</h3><blockquote>
 <p>SSH作用：SSH密钥可以为了防止其他人恶意部署文件到你的仓库，因为如果正常push需要输入账户密码不安全。简单点就是免密push,每次更新需要输入github的账号和密码，不但不安全也很麻烦，设置此方式后可以运行hexo d可以直接更新博客<br>一般是可以公司添加一个，家里添加一个<br>大概需要三个步骤：加ssh的作用：<br>这里要进行注解的是，有的教程会让配置SSH密钥，<br>一、本地生成密钥对；<br>二、设置github上的公钥；<br>三、修改git的remote url为git协议。</p>
 </blockquote>
 <p>####7.1、详细步骤：<br>1、查看本地是否有ssh：SSH 公钥默认储存在账户的主目录下的 ~/.ssh</p>
@@ -816,7 +816,7 @@ hexo dployer    //部署到远程仓库
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用Hexo-Github搭建博客总结"><span class="nav-number">1.</span> <span class="nav-text">使用Hexo+Github搭建博客总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建步骤"><span class="nav-number">1.1.</span> <span class="nav-text">搭建步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-前提环境："><span class="nav-number">1.1.1.</span> <span class="nav-text">1.前提环境：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、安装并初始化hexo"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、安装并初始化hexo:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5、如果已经创建过博客，比如我一样，是把所有的博客源文件放到github上，这样去移植博客的时候，就先安装node-js，然后选一个空文件夹安装hexo-和hexo-init。然后再取出github的博客仓库，将init的文件部分导入（源文件我只上传了内容和主题还有一些配置），然后检测hexo-v-是否生效即可。-因为可能之前的hexo版本会和新安装的hexo版本不一致可能运行hexo会出现配置文件的异常，只要按最新的copy过去就好了，然后有可能出现其他的错误，一步步修改就好了。-另外hexo5-0移除了swig-需要自己在hexoinit-的目录下手动安装-才能hexo-s-不出问题"><span class="nav-number">1.1.3.</span> <span class="nav-text">2.5、如果已经创建过博客，比如我一样，是把所有的博客源文件放到github上，这样去移植博客的时候，就先安装node.js，然后选一个空文件夹安装hexo 和hexo init。然后再取出github的博客仓库，将init的文件部分导入（源文件我只上传了内容和主题还有一些配置），然后检测hexo -v  是否生效即可。 因为可能之前的hexo版本会和新安装的hexo版本不一致可能运行hexo会出现配置文件的异常，只要按最新的copy过去就好了，然后有可能出现其他的错误，一步步修改就好了。 另外hexo5.0移除了swig 需要自己在hexoinit 的目录下手动安装 才能hexo s 不出问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、完成以上步骤已经可以预览本地博客网页-在git指令输入窗口非cmd"><span class="nav-number">1.1.4.</span> <span class="nav-text">3、完成以上步骤已经可以预览本地博客网页(在git指令输入窗口非cmd)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结合github-单个仓库最大1GB，单个文件上限100MB"><span class="nav-number">1.2.</span> <span class="nav-text">结合github(单个仓库最大1GB，单个文件上限100MB)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4、github创建博客仓库"><span class="nav-number">1.2.1.</span> <span class="nav-text">4、github创建博客仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、修改hexo下-config-yml配置文件配置deployer属性"><span class="nav-number">1.2.2.</span> <span class="nav-text">5、修改hexo下 _config.yml配置文件配置deployer属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、生成静态网页发布到github"><span class="nav-number">1.2.3.</span> <span class="nav-text">6、生成静态网页发布到github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、设置SSH-安全外壳协议-，此操作可以放于步骤4和步骤5之间"><span class="nav-number">1.2.4.</span> <span class="nav-text">7、设置SSH(安全外壳协议)，此操作可以放于步骤4和步骤5之间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、博客个性化设置"><span class="nav-number">1.2.5.</span> <span class="nav-text">8、博客个性化设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、博客更新"><span class="nav-number">1.2.6.</span> <span class="nav-text">9、博客更新</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令记录"><span class="nav-number">1.3.</span> <span class="nav-text">指令记录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建议"><span class="nav-number">1.4.</span> <span class="nav-text">建议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备注"><span class="nav-number">1.5.</span> <span class="nav-text">备注</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用Hexo-Github搭建博客总结"><span class="nav-number">1.</span> <span class="nav-text">使用Hexo+Github搭建博客总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建步骤"><span class="nav-number">1.1.</span> <span class="nav-text">搭建步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-前提环境："><span class="nav-number">1.1.1.</span> <span class="nav-text">1.前提环境：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、安装并初始化hexo"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、安装并初始化hexo:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5、如果已经创建过博客，比如我一样，是把所有的博客源文件放到github上，这样去移植博客的时候，就先安装node-js，然后选一个空文件夹安装hexo-和hexo-init。然后再取出github的博客仓库，将init的文件部分导入（源文件我只上传了内容和主题还有一些配置），然后检测hexo-v-是否生效即可。-因为可能之前的hexo版本会和新安装的hexo版本不一致可能运行hexo会出现配置文件的异常，只要按最新的copy过去就好了，然后有可能出现其他的错误，一步步修改就好了。-另外hexo5-0移除了swig-需要自己在hexoinit-的目录下手动安装-才能hexo-s-不出问题"><span class="nav-number">1.1.3.</span> <span class="nav-text">2.5、如果已经创建过博客，比如我一样，是把所有的博客源文件放到github上，这样去移植博客的时候，就先安装node.js，然后选一个空文件夹安装hexo 和hexo init。然后再取出github的博客仓库，将init的文件部分导入（源文件我只上传了内容和主题还有一些配置），然后检测hexo -v  是否生效即可。 因为可能之前的hexo版本会和新安装的hexo版本不一致可能运行hexo会出现配置文件的异常，只要按最新的copy过去就好了，然后有可能出现其他的错误，一步步修改就好了。 另外hexo5.0移除了swig 需要自己在hexoinit 的目录下手动安装 才能hexo s 不出问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、完成以上步骤已经可以预览本地博客网页-在git指令输入窗口非cmd"><span class="nav-number">1.1.4.</span> <span class="nav-text">3、完成以上步骤已经可以预览本地博客网页(在git指令输入窗口非cmd)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结合github-单个仓库最大1GB，单个文件上限100MB"><span class="nav-number">1.2.</span> <span class="nav-text">结合github(单个仓库最大1GB，单个文件上限100MB)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4、github创建博客仓库"><span class="nav-number">1.2.1.</span> <span class="nav-text">4、github创建博客仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、修改hexo下-config-yml配置文件配置deployer属性"><span class="nav-number">1.2.2.</span> <span class="nav-text">5、修改hexo下 _config.yml配置文件配置deployer属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、生成静态网页发布到github"><span class="nav-number">1.2.3.</span> <span class="nav-text">6、生成静态网页发布到github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、设置SSH-安全外壳协议-，此操作可以放于步骤4和步骤5之间，主要就是避免push和deploy需要的账户验证"><span class="nav-number">1.2.4.</span> <span class="nav-text">7、设置SSH(安全外壳协议)，此操作可以放于步骤4和步骤5之间，主要就是避免push和deploy需要的账户验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8、博客个性化设置"><span class="nav-number">1.2.5.</span> <span class="nav-text">8、博客个性化设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9、博客更新"><span class="nav-number">1.2.6.</span> <span class="nav-text">9、博客更新</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令记录"><span class="nav-number">1.3.</span> <span class="nav-text">指令记录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建议"><span class="nav-number">1.4.</span> <span class="nav-text">建议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备注"><span class="nav-number">1.5.</span> <span class="nav-text">备注</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -851,7 +851,7 @@ hexo dployer    //部署到远程仓库
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">48.2k</span>
+    <span title="Site words total count">48.3k</span>
   
   -->
 </div>
@@ -885,7 +885,7 @@ hexo dployer    //部署到远程仓库
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">48.2k</span> 字
+      博客全站共： <span class="post-count">48.3k</span> 字
     </span>
 </div>
 <!-- 新增访客统计代码 END-->
