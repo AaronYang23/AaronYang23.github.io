@@ -98,7 +98,7 @@
 <meta property="og:image" content="https://img-blog.csdn.net/20170131144908512">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2552605-dd99a16344da8c4a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/500">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/2552605-1786e81381fb0c1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
-<meta property="og:updated_time" content="2021-01-23T06:40:16.654Z">
+<meta property="og:updated_time" content="2021-02-05T05:59:51.495Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ConstranintLayout">
 <meta name="twitter:description" content="ConstraintLayout ConstraintLayout，称为约束性布局，Google:2017I/O大会上重点推出来的功能，非常适合使用可视化的方式来编写界面,使用方式有点类似于RelativeLayout，可以当做是其升级版本。 扁平化设计，减少层级嵌套，加快布局速度 Android Studio3.0后已经默认xml根标签为ConstraintLayout  一、使用（一）定位 C">
@@ -354,8 +354,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-01-23T14:40:16+08:00">
-                2021-01-23
+              <time title="更新于" itemprop="dateModified" datetime="2021-02-05T13:59:51+08:00">
+                2021-02-05
               </time>
             
           </span>
@@ -634,7 +634,8 @@ app:layout_constraintBottom_toBottomOf=&quot;@id/view2&quot;
 <li><a href="https://www.cnblogs.com/hehe520/p/6329857.html" target="_blank" rel="noopener">ConstraintLayout</a></li>
 <li><a href="https://biaomingzhong.github.io/2017/constraintlayout-tricks-centring/" target="_blank" rel="noopener">ConstraintLayout深入系列之中心点对齐</a></li>
 </ul>
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>1、额外注意，添加约束的时候要注意约束的对象会不会gone，一旦gone就会出现布局混乱了。所以约束的对象尽量要是一直可见的。实在做不到的时候也只能设置一个同大小的空view去占位了</p>
+<h2 id="Constraintlayout"><a href="#Constraintlayout" class="headerlink" title="Constraintlayout"></a>Constraintlayout</h2><h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>1、避免出现约束的问题。一个控件建立约束 一定要建立在绝对不会gone的view上面</p>
+<p>添加约束的时候要注意约束的对象会不会gone，一旦gone就会出现布局混乱了。所以约束的对象尽量要是一直可见的。实在做不到的时候也只能设置一个同大小的空view去占位了</p>
 
       
     </div>
@@ -780,7 +781,7 @@ app:layout_constraintBottom_toBottomOf=&quot;@id/view2&quot;
               
                 <a href="/AaronYang23.github.io/archives/">
               
-                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-count">95</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -802,7 +803,7 @@ app:layout_constraintBottom_toBottomOf=&quot;@id/view2&quot;
               
               <div class="site-state-item site-state-tags">
                 <a href="/AaronYang23.github.io/tags/index.html">
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -865,7 +866,7 @@ app:layout_constraintBottom_toBottomOf=&quot;@id/view2&quot;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ConstraintLayout"><span class="nav-number">1.</span> <span class="nav-text">ConstraintLayout</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、使用"><span class="nav-number">1.1.</span> <span class="nav-text">一、使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（一）定位"><span class="nav-number">1.1.1.</span> <span class="nav-text">（一）定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（二）指示线"><span class="nav-number">1.1.2.</span> <span class="nav-text">（二）指示线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（三）Chains链"><span class="nav-number">1.1.3.</span> <span class="nav-text">（三）Chains链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（四）宽高比"><span class="nav-number">1.1.4.</span> <span class="nav-text">（四）宽高比</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#控件自身宽高比"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">控件自身宽高比</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子控件宽高比"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">子控件宽高比</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、属性记录："><span class="nav-number">1.2.</span> <span class="nav-text">二、属性记录：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对齐"><span class="nav-number">1.3.</span> <span class="nav-text">对齐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#百分比布局"><span class="nav-number">1.4.</span> <span class="nav-text">百分比布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、内容参照："><span class="nav-number">1.5.</span> <span class="nav-text">三、内容参照：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">1.6.</span> <span class="nav-text">补充</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ConstraintLayout"><span class="nav-number">1.</span> <span class="nav-text">ConstraintLayout</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、使用"><span class="nav-number">1.1.</span> <span class="nav-text">一、使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（一）定位"><span class="nav-number">1.1.1.</span> <span class="nav-text">（一）定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（二）指示线"><span class="nav-number">1.1.2.</span> <span class="nav-text">（二）指示线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（三）Chains链"><span class="nav-number">1.1.3.</span> <span class="nav-text">（三）Chains链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（四）宽高比"><span class="nav-number">1.1.4.</span> <span class="nav-text">（四）宽高比</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#控件自身宽高比"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">控件自身宽高比</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子控件宽高比"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">子控件宽高比</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、属性记录："><span class="nav-number">1.2.</span> <span class="nav-text">二、属性记录：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对齐"><span class="nav-number">1.3.</span> <span class="nav-text">对齐</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#百分比布局"><span class="nav-number">1.4.</span> <span class="nav-text">百分比布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、内容参照："><span class="nav-number">1.5.</span> <span class="nav-text">三、内容参照：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Constraintlayout"><span class="nav-number">1.6.</span> <span class="nav-text">Constraintlayout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">1.7.</span> <span class="nav-text">补充</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -900,7 +901,7 @@ app:layout_constraintBottom_toBottomOf=&quot;@id/view2&quot;
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">50.6k</span>
+    <span title="Site words total count">52.1k</span>
   
   -->
 </div>
@@ -934,7 +935,7 @@ app:layout_constraintBottom_toBottomOf=&quot;@id/view2&quot;
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">50.6k</span> 字
+      博客全站共： <span class="post-count">52.1k</span> 字
     </span>
 </div>
 <!-- 新增访客统计代码 END-->

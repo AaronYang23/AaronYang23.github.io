@@ -94,14 +94,10 @@
 <meta property="og:site_name" content="ArronYang">
 <meta property="og:description" content="gradle作用gradle是一个以Groovy语言为基础的构建工具，要面向的是Java语言，在studio中的作用主要为：  项目设置配置 导入jar包 签名打包  gradle离线下载 卡在gradle building:Android Studio导入项目的时候，需要下载项目对应的gradle包，主因为在国内防火墙屏蔽的原因，导致下载的速度蜗牛般慢，所以会一直卡停在这个界面  方法一：修改项">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://p03vhocz1.bkt.clouddn.com/20180322121133421.jpg">
-<meta property="og:image" content="http://p03vhocz1.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720181019164902.png">
-<meta property="og:image" content="http://p03vhocz1.bkt.clouddn.com/20180322121547308.jpg">
-<meta property="og:updated_time" content="2021-01-15T09:16:15.361Z">
+<meta property="og:updated_time" content="2021-02-05T03:20:21.164Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Gradle 配置解析">
 <meta name="twitter:description" content="gradle作用gradle是一个以Groovy语言为基础的构建工具，要面向的是Java语言，在studio中的作用主要为：  项目设置配置 导入jar包 签名打包  gradle离线下载 卡在gradle building:Android Studio导入项目的时候，需要下载项目对应的gradle包，主因为在国内防火墙屏蔽的原因，导致下载的速度蜗牛般慢，所以会一直卡停在这个界面  方法一：修改项">
-<meta name="twitter:image" content="http://p03vhocz1.bkt.clouddn.com/20180322121133421.jpg">
 
 
 
@@ -353,8 +349,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-01-15T17:16:15+08:00">
-                2021-01-15
+              <time title="更新于" itemprop="dateModified" datetime="2021-02-05T11:20:21+08:00">
+                2021-02-05
               </time>
             
           </span>
@@ -408,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.6k
+                  1.4k
                 </span>
               
 
@@ -598,26 +594,17 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 </code></pre><p>buildscript下的第一个子“节点”是声明仓库源，</p>
-<h2 id="gradle无法下载远程依赖问题-amp-插件无法下载"><a href="#gradle无法下载远程依赖问题-amp-插件无法下载" class="headerlink" title="gradle无法下载远程依赖问题&amp;插件无法下载"></a>gradle无法下载远程依赖问题&amp;插件无法下载</h2><h3 id="1、新建显目报错，无法加载依赖问题："><a href="#1、新建显目报错，无法加载依赖问题：" class="headerlink" title="1、新建显目报错，无法加载依赖问题："></a>1、新建显目报错，无法加载依赖问题：</h3><p><img src="http://p03vhocz1.bkt.clouddn.com/20180322121133421.jpg" alt></p>
-<h4 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h4><ul>
-<li><a href="https://blog.csdn.net/cssxn/article/details/79652197" target="_blank" rel="noopener">参考1</a></li>
-</ul>
-<p>1.添加上全部远程仓库<br>         repositories {<br>            google()<br>               mavenCentral()<br>            jcenter()<br>           }</p>
-<pre><code>allprojects {
-       repositories {
-           google()
-        jcenter()
-           mavenCentral()
-      }
-}
-</code></pre><p>2.关闭gradle离线模式，检查http代理的设置。之前出现过因为上一个项目设置的离线和本地http代理，然后新建项目之后无法正常依赖，即使设置了不启动http代理也还是一直无法依赖，连不上网，后来看错误信息发现还是本地的127的代理，发现是因为全局的gradle.propertis那里还没有变，删除掉那些代理设置就好<br>下图表示一个为全局的设置一个为项目的设置<br><img src="http://p03vhocz1.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720181019164902.png" alt></p>
-<p>下图表示全局的配置依然还是本地的http代理<br><img src="http://p03vhocz1.bkt.clouddn.com/20180322121547308.jpg" alt></p>
-<h3 id="2、Android-Studio-error-Unable-to-start-the-daemon-process的解决方法"><a href="#2、Android-Studio-error-Unable-to-start-the-daemon-process的解决方法" class="headerlink" title="2、Android Studio error: Unable to start the daemon process的解决方法"></a>2、Android Studio error: Unable to start the daemon process的解决方法</h3><pre><code>方法一：删除 C:\Users\UserName\.gradle 目录，重新启动 Android Studio即可。重启动后，它会自动为你创建一个新的。
+<h2 id="annotationProcessor和android-apt：注解处理"><a href="#annotationProcessor和android-apt：注解处理" class="headerlink" title="annotationProcessor和android-apt：注解处理"></a>annotationProcessor和android-apt：注解处理</h2><p>APT：Annotation Processing Tool 的简称，处理注解的工具，可以在代码编译期解析注解，并生成新的Java文件，减少手动代码的输入。比如Dagger2，ButterKnife, EventBus3等<br>annotationProcessor和android-apt的功能是一样的，它们是替代关系。    Gradle2.2发布之后，annotationProcessor来代替android-apt、</p>
+<p>kotlin中不使用apt和annotationProcessor，使用kapt（Annotation Processing for Kotlin ）<br>例子：</p>
+<pre><code>//java中
+implementation &apos;com.google.dagger:dagger:2.17&apos;
+annotationProcessor &apos;com.google.dagger:dagger-compiler:2.17&apos;
 
-方法二：修改配置。File -&gt; Settings. 选择左边导航栏的Compiler项，设置 VM Options 为 -Xmx512m即可。
-
-方法三：其它应该，留出更多的内存空间试试。
-</code></pre><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+//kotlin中
+implementation &apos;com.google.dagger:dagger:2.17&apos;
+kapt &apos;com.google.dagger:dagger-compiler:2.17&apos;
+</code></pre><p><a href="https://blog.csdn.net/sinat_31057219/article/details/82798660" target="_blank" rel="noopener">插眼</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="https://blog.csdn.net/zhangxichao100/article/details/77770454" target="_blank" rel="noopener">app目录下的build.gradle详解</a></li>
 <li><a href="https://www.cnblogs.com/Kennytian/p/4923993.html" target="_blank" rel="noopener">学习Android Studio里的Gradle</a></li>
 <li><a href="https://blog.csdn.net/u010350809/article/details/72864544" target="_blank" rel="noopener">buildscript和allprojects的作用和区别是什么？</a></li>
@@ -767,7 +754,7 @@ task clean(type: Delete) {
               
                 <a href="/AaronYang23.github.io/archives/">
               
-                  <span class="site-state-item-count">90</span>
+                  <span class="site-state-item-count">95</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -789,7 +776,7 @@ task clean(type: Delete) {
               
               <div class="site-state-item site-state-tags">
                 <a href="/AaronYang23.github.io/tags/index.html">
-                  <span class="site-state-item-count">41</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -852,7 +839,7 @@ task clean(type: Delete) {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#gradle作用"><span class="nav-number">1.</span> <span class="nav-text">gradle作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卡在gradle-building"><span class="nav-number">2.</span> <span class="nav-text">卡在gradle building:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#app下的build-gradle-基本"><span class="nav-number">3.</span> <span class="nav-text">app下的build.gradle  基本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#moudle下的build-gradle"><span class="nav-number">4.</span> <span class="nav-text">moudle下的build.gradle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gradle无法下载远程依赖问题-amp-插件无法下载"><span class="nav-number">5.</span> <span class="nav-text">gradle无法下载远程依赖问题&amp;插件无法下载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、新建显目报错，无法加载依赖问题："><span class="nav-number">5.1.</span> <span class="nav-text">1、新建显目报错，无法加载依赖问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#解决办法："><span class="nav-number">5.1.1.</span> <span class="nav-text">解决办法：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、Android-Studio-error-Unable-to-start-the-daemon-process的解决方法"><span class="nav-number">5.2.</span> <span class="nav-text">2、Android Studio error: Unable to start the daemon process的解决方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#gradle作用"><span class="nav-number">1.</span> <span class="nav-text">gradle作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卡在gradle-building"><span class="nav-number">2.</span> <span class="nav-text">卡在gradle building:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#app下的build-gradle-基本"><span class="nav-number">3.</span> <span class="nav-text">app下的build.gradle  基本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#moudle下的build-gradle"><span class="nav-number">4.</span> <span class="nav-text">moudle下的build.gradle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#annotationProcessor和android-apt：注解处理"><span class="nav-number">5.</span> <span class="nav-text">annotationProcessor和android-apt：注解处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -887,7 +874,7 @@ task clean(type: Delete) {
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">50.6k</span>
+    <span title="Site words total count">52.1k</span>
   
   -->
 </div>
@@ -921,7 +908,7 @@ task clean(type: Delete) {
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">50.6k</span> 字
+      博客全站共： <span class="post-count">52.1k</span> 字
     </span>
 </div>
 <!-- 新增访客统计代码 END-->
