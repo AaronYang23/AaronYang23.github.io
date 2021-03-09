@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="libs,">
 
 
 
@@ -86,17 +86,18 @@
 
 
 
-<meta name="description" content="官方文档一、添加依赖和配置：//All Mudule android {     defaultConfig {         ...         //注意：这块代码必须每个模块都加上，不管有没有引用         //AROUTER_MODULE_NAME这个跟版本有关，低版本是小写的         javaCompileOptions {              annotatio">
+<meta name="description" content="Arouter(二)自动注入传递参数（对象）自动注入需要写 ARouter.getInstance().inject(this)  否则为空 如果不需要自动注入可以不写，写的话可以写基类中 @JvmField        //如果是kotlinbean类才添加 @Autowired(name = &amp;quot;ownerDashBoard&amp;quot;) var ownerDashBoardBean">
+<meta name="keywords" content="libs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Arouter">
-<meta property="og:url" content="https://aaronyang23.github.io/2021/02/01/架构/Arouter/index.html">
+<meta property="og:title" content="Arouter(二)">
+<meta property="og:url" content="https://aaronyang23.github.io/2021/03/09/Android/Library/Arouter（二）/index.html">
 <meta property="og:site_name" content="ArronYang">
-<meta property="og:description" content="官方文档一、添加依赖和配置：//All Mudule android {     defaultConfig {         ...         //注意：这块代码必须每个模块都加上，不管有没有引用         //AROUTER_MODULE_NAME这个跟版本有关，低版本是小写的         javaCompileOptions {              annotatio">
+<meta property="og:description" content="Arouter(二)自动注入传递参数（对象）自动注入需要写 ARouter.getInstance().inject(this)  否则为空 如果不需要自动注入可以不写，写的话可以写基类中 @JvmField        //如果是kotlinbean类才添加 @Autowired(name = &amp;quot;ownerDashBoard&amp;quot;) var ownerDashBoardBean">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-02-05T03:11:30.292Z">
+<meta property="og:updated_time" content="2021-03-09T12:13:21.054Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Arouter">
-<meta name="twitter:description" content="官方文档一、添加依赖和配置：//All Mudule android {     defaultConfig {         ...         //注意：这块代码必须每个模块都加上，不管有没有引用         //AROUTER_MODULE_NAME这个跟版本有关，低版本是小写的         javaCompileOptions {              annotatio">
+<meta name="twitter:title" content="Arouter(二)">
+<meta name="twitter:description" content="Arouter(二)自动注入传递参数（对象）自动注入需要写 ARouter.getInstance().inject(this)  否则为空 如果不需要自动注入可以不写，写的话可以写基类中 @JvmField        //如果是kotlinbean类才添加 @Autowired(name = &amp;quot;ownerDashBoard&amp;quot;) var ownerDashBoardBean">
 
 
 
@@ -126,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://aaronyang23.github.io/2021/02/01/架构/Arouter/">
+  <link rel="canonical" href="https://aaronyang23.github.io/2021/03/09/Android/Library/Arouter（二）/">
 
 
 
 
 
-  <title>Arouter | ArronYang</title>
+  <title>Arouter(二) | ArronYang</title>
   
 
 
@@ -303,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://aaronyang23.github.io/AaronYang23.github.io/2021/02/01/架构/Arouter/">
+    <link itemprop="mainEntityOfPage" href="https://aaronyang23.github.io/AaronYang23.github.io/2021/03/09/Android/Library/Arouter（二）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AaronYang">
@@ -320,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Arouter</h1>
+          <h1 class="post-title" itemprop="name headline">Arouter(二)</h1>
         
 
         <div class="post-meta">
@@ -332,8 +333,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-02-01T09:39:24+08:00">
-                2021-02-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-03-09T20:07:22+08:00">
+                2021-03-09
               </time>
             
 
@@ -348,12 +349,34 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-02-05T11:11:30+08:00">
-                2021-02-05
+              <time title="更新于" itemprop="dateModified" datetime="2021-03-09T20:13:21+08:00">
+                2021-03-09
               </time>
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/AaronYang23.github.io/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -381,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  895
+                  95
                 </span>
               
 
@@ -397,7 +420,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  1
                 </span>
               
             </div>
@@ -418,112 +441,13 @@
       
 
       
-        <h1 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a><a href="https://github.com/alibaba/ARouter/blob/master/README_CN.md" target="_blank" rel="noopener">官方文档</a></h1><h2 id="一、添加依赖和配置："><a href="#一、添加依赖和配置：" class="headerlink" title="一、添加依赖和配置："></a>一、添加依赖和配置：</h2><pre><code>//All Mudule
-android {
-    defaultConfig {
-        ...
-        //注意：这块代码必须每个模块都加上，不管有没有引用
-        //AROUTER_MODULE_NAME这个跟版本有关，低版本是小写的
-        javaCompileOptions { 
-            annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
-            }
-        }
-    }
-}
-
-//Need Arouter Module
-dependencies {
-    // 替换成最新版本, 需要注意的是api
-    // 要与compiler匹配使用，均使用最新版可以保证兼容
-    compile &apos;com.alibaba:arouter-api:x.x.x&apos;
-
-    //  因为上面说compile 其他模块都可以引用，但是下面compiler必须需要路由的model都引用(主要是没法api声明)
-    annotationProcessor &apos;com.alibaba:arouter-compiler:x.x.x&apos;
-    ...
-}
-</code></pre><h2 id="二、基本使用查看官方文档-不做记录"><a href="#二、基本使用查看官方文档-不做记录" class="headerlink" title="二、基本使用查看官方文档 不做记录"></a>二、基本使用查看<a href="https://github.com/alibaba/ARouter/blob/master/README_CN.md" target="_blank" rel="noopener">官方文档</a> 不做记录</h2><pre><code>// 构建标准的路由请求
-ARouter.getInstance().build(&quot;/home/main&quot;).navigation();
-
-// 构建标准的路由请求，并指定分组a
-ARouter.getInstance().build(&quot;/home/main&quot;, &quot;ap&quot;).navigation();
-
-
-// 构建标准的路由请求，startActivityForResult
-// navigation的第一个参数必须是Activity，第二个参数则是RequestCode
-ARouter.getInstance().build(&quot;/home/main&quot;, &quot;ap&quot;).navigation(this, 5);
-
-// 直接传递Bundle
-Bundle params = new Bundle();
-ARouter.getInstance()
-    .build(&quot;/home/main&quot;)
-    .with(params)
-    .navigation();
-
-// 指定Flag
-ARouter.getInstance()
-    .build(&quot;/home/main&quot;)
-    .withFlags();
-    .navigation();
-
-// 获取Fragment
+        <h1 id="Arouter-二"><a href="#Arouter-二" class="headerlink" title="Arouter(二)"></a>Arouter(二)</h1><h3 id="自动注入传递参数（对象）"><a href="#自动注入传递参数（对象）" class="headerlink" title="自动注入传递参数（对象）"></a>自动注入传递参数（对象）</h3><p>自动注入需要写 <code>ARouter.getInstance().inject(this)</code>  否则为空 如果不需要自动注入可以不写，写的话可以写基类中</p>
+<pre><code>@JvmField        //如果是kotlinbean类才添加
+@Autowired(name = &quot;ownerDashBoard&quot;)
+var ownerDashBoardBean: OwnerDashBoardBean? = null
+</code></pre><h3 id="Fragment"><a href="#Fragment" class="headerlink" title="Fragment"></a>Fragment</h3><p>1、其他模块获取未依赖模块的Fragment</p>
+<pre><code>// 获取Fragment
 Fragment fragment = (Fragment) ARouter.getInstance().build(&quot;/test/fragment&quot;).navigation();
-
-// 对象传递
-ARouter.getInstance()
-    .withObject(&quot;key&quot;, new TestObj(&quot;Jack&quot;, &quot;Rose&quot;))
-    .navigation();
-
-// 觉得接口不够多，可以直接拿出Bundle赋值
-ARouter.getInstance()
-        .build(&quot;/home/main&quot;)
-        .getExtra();
-
-// 转场动画(常规方式)
-ARouter.getInstance()
-    .build(&quot;/test/activity2&quot;)
-    .withTransition(R.anim.slide_in_bottom, R.anim.slide_out_bottom)
-    .navigation(this);
-
-// 转场动画(API16+)
-ActivityOptionsCompat compat = ActivityOptionsCompat.
-    makeScaleUpAnimation(v, v.getWidth() / 2, v.getHeight() / 2, 0, 0);
-
-// ps. makeSceneTransitionAnimation 使用共享元素的时候，需要在navigation方法中传入当前Activity
-
-ARouter.getInstance()
-    .build(&quot;/test/activity2&quot;)
-    .withOptionsCompat(compat)
-    .navigation();
-
-// 使用绿色通道(跳过所有的拦截器)
-ARouter.getInstance().build(&quot;/home/main&quot;).greenChannel().navigation();
-
-// 使用自己的日志工具打印日志
-ARouter.setLogger();
-
-// 使用自己提供的线程池
-ARouter.setExecutor();
-</code></pre><h2 id="三、项目中的规划"><a href="#三、项目中的规划" class="headerlink" title="三、项目中的规划"></a>三、项目中的规划</h2><p>2个方案</p>
-<blockquote>
-<p>1.统一ArouterPathConstants类管理所有路径，方便修改只需要修改变量即可<br>2.分模块创建对应的PathConstants类，然后所有类可以集合放在一个module中，这样做是如文章所说，避免所有人员可操作base库</p>
-</blockquote>
-<h2 id="四、遇到的问题："><a href="#四、遇到的问题：" class="headerlink" title="四、遇到的问题："></a>四、遇到的问题：</h2><blockquote>
-<p>因为一开始搭框架，主modeleapp暂时还没有依赖其他模块，导致一直报错找不到路径，哎<br> <code>所以请看你 主App的build.gradle中，是否把你需要路由的模块引入进来，果你模块没引入进来，那么Arouter铁定找不到</code></p>
-</blockquote>
-<p>其他原因：</p>
-<pre><code>&quot;W/ARouter::: ARouter::There is no route match the path [/xxx/xxx], in group [xxx][ ]&quot;
-
-通常来说这种情况是没有找到目标页面，目标不存在
-如果这个页面是存在的，那么您可以按照下面的步骤进行排查
-1、检查目标页面的注解是否配置正确，正确的注解形式应该是 (@Route(path=&quot;/test/test&quot;), 如没有特殊需求，请勿指定group字段，废弃功能)
-
-2、检查目标页面所在的模块的gradle脚本中是否依赖了 arouter-compiler sdk (需要注意的是，要使用apt依赖，而不是compile关键字依赖)
-
-3、检查主app是否依赖了其他组件module，没有依赖上肯定找不到
-
-4、检查编译打包日志，是否出现了形如 ARouter::�Compiler &gt;&gt;&gt; xxxxx 的日志，日志中会打印出发现的路由目标
-启动App的时候，开启debug、log(openDebug/openLog), 查看映射表是否已经被扫描出来，形如 D/ARouter::: LogisticsCenter has already been loaded, GroupIndex[4]，GroupIndex &gt; 0
 </code></pre>
       
     </div>
@@ -550,7 +474,7 @@ ARouter.setExecutor();
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://aaronyang23.github.io/2021/02/01/架构/Arouter/" title="Arouter">https://aaronyang23.github.io/2021/02/01/架构/Arouter/</a>
+    <a href="https://aaronyang23.github.io/2021/03/09/Android/Library/Arouter（二）/" title="Arouter(二)">https://aaronyang23.github.io/2021/03/09/Android/Library/Arouter（二）/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -563,6 +487,12 @@ ARouter.setExecutor();
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/AaronYang23.github.io/tags/libs/" rel="tag"># libs</a>
+          
+        </div>
+      
 
       
       
@@ -572,8 +502,8 @@ ARouter.setExecutor();
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/AaronYang23.github.io/2021/01/29/RecycleView-分割线（ItemDecoration）/" rel="next" title="RecycleView - 分割线（ItemDecoration）">
-                <i class="fa fa-chevron-left"></i> RecycleView - 分割线（ItemDecoration）
+              <a href="/AaronYang23.github.io/2021/03/05/Android/Library/ImmersionBar/" rel="next" title="ImmersionBar">
+                <i class="fa fa-chevron-left"></i> ImmersionBar
               </a>
             
           </div>
@@ -582,8 +512,8 @@ ARouter.setExecutor();
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/AaronYang23.github.io/2021/02/02/Kotlin/Java项目调用Kotlin库或者类会遇到的问题/" rel="prev" title="Java项目调用Kotlin库或者类会遇到的问题">
-                Java项目调用Kotlin库或者类会遇到的问题 <i class="fa fa-chevron-right"></i>
+              <a href="/AaronYang23.github.io/2021/03/09/Kotlin/Kotlin随手笔记/" rel="prev" title="Kotlin随手笔记">
+                Kotlin随手笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -663,7 +593,7 @@ ARouter.setExecutor();
               
                 <a href="/AaronYang23.github.io/archives/">
               
-                  <span class="site-state-item-count">99</span>
+                  <span class="site-state-item-count">102</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -685,7 +615,7 @@ ARouter.setExecutor();
               
               <div class="site-state-item site-state-tags">
                 <a href="/AaronYang23.github.io/tags/index.html">
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -748,7 +678,7 @@ ARouter.setExecutor();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#官方文档"><span class="nav-number">1.</span> <span class="nav-text">官方文档</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、添加依赖和配置："><span class="nav-number">1.1.</span> <span class="nav-text">一、添加依赖和配置：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、基本使用查看官方文档-不做记录"><span class="nav-number">1.2.</span> <span class="nav-text">二、基本使用查看官方文档 不做记录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、项目中的规划"><span class="nav-number">1.3.</span> <span class="nav-text">三、项目中的规划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、遇到的问题："><span class="nav-number">1.4.</span> <span class="nav-text">四、遇到的问题：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Arouter-二"><span class="nav-number">1.</span> <span class="nav-text">Arouter(二)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自动注入传递参数（对象）"><span class="nav-number">1.0.1.</span> <span class="nav-text">自动注入传递参数（对象）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fragment"><span class="nav-number">1.0.2.</span> <span class="nav-text">Fragment</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -783,7 +713,7 @@ ARouter.setExecutor();
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">54.8k</span>
+    <span title="Site words total count">55.1k</span>
   
   -->
 </div>
@@ -817,7 +747,7 @@ ARouter.setExecutor();
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">54.8k</span> 字
+      博客全站共： <span class="post-count">55.1k</span> 字
     </span>
 </div>
 <!-- 新增访客统计代码 END-->

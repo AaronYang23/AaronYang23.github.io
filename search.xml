@@ -1,8 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[云课堂项目重构遇到的所有问题]]></title>
+    <url>%2FAaronYang23.github.io%2F2021%2F03%2F09%2F%E6%9E%B6%E6%9E%84%2F%E4%BA%91%E8%AF%BE%E5%A0%82%E9%A1%B9%E7%9B%AE%E9%87%8D%E6%9E%84%E9%81%87%E5%88%B0%E7%9A%84%E6%89%80%E6%9C%89%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[云课堂项目重构遇到的所有问题上层module报错找不到依赖module下的aar文件，明明aar文件就放在lib下面插眼 1、引入aar文件需要： 引入的module build.gradle中添加 android { ... repositories { flatDir { dirs &apos;libs&apos; } } } 2、该module下的build.gradle 添加 dependencies implementation(name: &apos;name-of-aar&apos;, ext: &apos;aar&apos;) 3、报错找不到，全局添加： project下的build.gradle allprojects { repositories { google() jcenter() flatDir { //所有的module的repositories下把library module中的libs目录添加到依赖关系中 dirs project(&apos;:引入了aar的module名字&apos;).file(&apos;libs&apos;) } } }]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Kotlin随手笔记]]></title>
+    <url>%2FAaronYang23.github.io%2F2021%2F03%2F09%2FKotlin%2FKotlin%E9%9A%8F%E6%89%8B%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[Kotlin随手笔记强制类型转换 as]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>Kotlin</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Arouter(二)]]></title>
+    <url>%2FAaronYang23.github.io%2F2021%2F03%2F09%2FAndroid%2FLibrary%2FArouter%EF%BC%88%E4%BA%8C%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[Arouter(二)自动注入传递参数（对象）自动注入需要写 ARouter.getInstance().inject(this) 否则为空 如果不需要自动注入可以不写，写的话可以写基类中 @JvmField //如果是kotlinbean类才添加 @Autowired(name = &quot;ownerDashBoard&quot;) var ownerDashBoardBean: OwnerDashBoardBean? = null Fragment1、其他模块获取未依赖模块的Fragment // 获取Fragment Fragment fragment = (Fragment) ARouter.getInstance().build(&quot;/test/fragment&quot;).navigation();]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+      <tags>
+        <tag>libs</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ImmersionBar]]></title>
-    <url>%2FAaronYang23.github.io%2F2021%2F03%2F05%2FLibrary%2FImmersionBar%2F</url>
+    <url>%2FAaronYang23.github.io%2F2021%2F03%2F05%2FAndroid%2FLibrary%2FImmersionBar%2F</url>
     <content type="text"><![CDATA[ImmersionBarImmersionBar – android 4.4以上沉浸式实现依赖// 基础依赖包，必须要依赖 implementation &apos;com.gyf.immersionbar:immersionbar:3.0.0&apos; 使用ImmersionBar.with(this).init();//可以放在基类activity中 设置ImmersionBar.with(this) .transparentStatusBar() //透明状态栏，不写默认透明色 .transparentNavigationBar() //透明导航栏，不写默认黑色(设置此方法，fullScreen()方法自动为true) .transparentBar() //透明状态栏和导航栏，不写默认状态栏为透明色，导航栏为黑色（设置此方法，fullScreen()方法自动为true） .statusBarColor(R.color.colorPrimary) //状态栏颜色，不写默认透明色 .navigationBarColor(R.color.colorPrimary) //导航栏颜色，不写默认黑色 .barColor(R.color.colorPrimary) //同时自定义状态栏和导航栏颜色，不写默认状态栏为透明色，导航栏为黑色 .statusBarAlpha(0.3f) //状态栏透明度，不写默认0.0f .navigationBarAlpha(0.4f) //导航栏透明度，不写默认0.0F .barAlpha(0.3f) //状态栏和导航栏透明度，不写默认0.0f .statusBarDarkFont(true) //状态栏字体是深色，不写默认为亮色 .navigationBarDarkIcon(true) //导航栏图标是深色，不写默认为亮色 .autoDarkModeEnable(true) //自动状态栏字体和导航栏图标变色，必须指定状态栏颜色和导航栏颜色才可以自动变色哦 .autoStatusBarDarkModeEnable(true,0.2f) //自动状态栏字体变色，必须指定状态栏颜色才可以自动变色哦 .autoNavigationBarDarkModeEnable(true,0.2f) //自动导航栏图标变色，必须指定导航栏颜色才可以自动变色哦 .flymeOSStatusBarFontColor(R.color.btn3) //修改flyme OS状态栏字体颜色 .fullScreen(true) //有导航栏的情况下，activity全屏显示，也就是activity最下面被导航栏覆盖，不写默认非全屏 .hideBar(BarHide.FLAG_HIDE_BAR) //隐藏状态栏或导航栏或两者，不写默认不隐藏 .addViewSupportTransformColor(toolbar) //设置支持view变色，可以添加多个view，不指定颜色，默认和状态栏同色，还有两个重载方法 .titleBar(view) //解决状态栏和布局重叠问题，任选其一 .titleBarMarginTop(view) //解决状态栏和布局重叠问题，任选其一 .statusBarView(view) //解决状态栏和布局重叠问题，任选其一 .fitsSystemWindows(true) //解决状态栏和布局重叠问题，任选其一，默认为false，当为true时一定要指定statusBarColor()，不然状态栏为透明色，还有一些重载方法 .supportActionBar(true) //支持ActionBar使用 .statusBarColorTransform(R.color.orange) //状态栏变色后的颜色 .navigationBarColorTransform(R.color.orange) //导航栏变色后的颜色 .barColorTransform(R.color.orange) //状态栏和导航栏变色后的颜色 .removeSupportView(toolbar) //移除指定view支持 .removeSupportAllView() //移除全部view支持 .navigationBarEnable(true) //是否可以修改导航栏颜色，默认为true .navigationBarWithKitkatEnable(true) //是否可以修改安卓4.4和emui3.x手机导航栏颜色，默认为true .navigationBarWithEMUI3Enable(true) //是否可以修改emui3.x手机导航栏颜色，默认为true .keyboardEnable(true) //解决软键盘与底部输入框冲突问题，默认为false，还有一个重载方法，可以指定软键盘mode .keyboardMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE) //单独指定软键盘模式 .setOnKeyboardListener(new OnKeyboardListener() { //软键盘监听回调，keyboardEnable为true才会回调此方法 @Override public void onKeyboardChange(boolean isPopup, int keyboardHeight) { LogUtils.e(isPopup); //isPopup为true，软键盘弹出，为false，软键盘关闭 } }) .setOnNavigationBarListener(onNavigationBarListener) //导航栏显示隐藏监听，目前只支持华为和小米手机 .setOnBarListener(OnBarListener) //第一次调用和横竖屏切换都会触发，可以用来做刘海屏遮挡布局控件的问题 .addTag(&quot;tag&quot;) //给以上设置的参数打标记 .getTag(&quot;tag&quot;) //根据tag获得沉浸式参数 .reset() //重置所以沉浸式参数 .init(); //必须调用方可应用以上所配置的参数 遇到的问题1、当白色背景状态栏遇到不能自动改变状态栏字体为深色的设备时，解决方案： 设置深色字体： ImmersionBar.with(this) .statusBarDarkFont(true, 0.2f) //原理：如果当前设备支持状态栏字体变色，会设置状态栏字体为黑色，如果当前设备不支持状态栏字体变色，会使当前状态栏加上透明度，否则不执行透明度 .init();]]></content>
       <categories>
         <category>Android</category>
@@ -14,7 +44,7 @@
   <entry>
     <title><![CDATA[Android命名规范]]></title>
     <url>%2FAaronYang23.github.io%2F2021%2F03%2F05%2FAndroid%2FStandard%2FAndroid%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%2F</url>
-    <content type="text"><![CDATA[Android&amp;Java命名规范1、变量命名 严禁使用中文或者中文拼音进行重命名 使用驼峰式命名风格（单词最好控制在三个以内） 局部变量应用作用来命名 // 命名规范附带技巧（当布局中同个类型的控件只有一个的时候，也可以这样命名） TextView textView; RecyclerView recyclerView; 成员变量必须以小m开头，如： String mName; TextView mNameView; FrameLayout mNameLayout; 布尔值不应该以is开头，如 // 错误写法示例 private boolean mIsDebug = false; boolean isDebug = false; // 正确写法示例 private boolean mDebug = false; boolean debug = false; 静态变量用小s开头，如： static Handler sHandler; 静态常量全大写 static final String REQUEST_INSTALL_PACKAGES; 2、方法命名initXX： 初始化相关方法，使用 init 为前缀标识，如初始化布局 initView isXX： 方法返回值为 boolean 型的请使用 is 或 check 为前缀标识 getXX： 返回某个值的方法，使用 get 为前缀标识，例如 getName setXX： 设置某个属性值，使用 set 为前缀标识，例如 setName handleXX/processXX： 对数据进行处理的方法，例如 handleMessage displayXX/showXX： 弹出提示框和提示信息，例如 showDialog updateXX： 更新某个东西，例如 updateData saveXX： 保存某个东西，例如 saveData resetXX： 重置某个东西，例如 resetData clearXX： 清除某个东西，例如 clearData removeXX： 移除数据或者视图等，例如 removeView drawXX： 绘制数据或效果相关的，使用 draw 前缀标识，例如 drawText 3、类文件命名业务模块，以 模块 + 类型 命名，如： HomeActivity.java SettingFragment.java HomeAdapter.java AddressDialog.java 技术模块请以类的 作用 来命名，如： CrashHandler.java GridSpaceDecoration.java PickerLayoutManager.java 4、接口命名监听事件：参考View的写法和命名 public class View { private View.OnClickListener mListener; public void setOnClickListener(OnClickListener listener) { mListener = listener; } public interface OnClickListener { void onClick(View v); } } 回调事件：参考Handler的学法和命名 public class Handler { public interface Callback { boolean handleMessage(Message msg); } } 5、布局文件命名以 模块 + 类型 来命名，如 home_activity.xml setting_fragment.xml menu_item.xml address_dialog.xml 这样写的好处在于，由于 res 文件夹下是没有层级概念的,通过前缀的命名可以帮助我们更好定位到同一模块下的资源 例如分享对话框中，有对话框 Root 布局和 Item 布局 share_dialog.xml（Root 布局） share_item.xml（Item 布局） 6、drawable资源文件命名以 模块 + 作用 + 类型命名 button_rect_selector.xml（通用直角按钮样式） button_round_selector.xml（通用圆角按钮样式） 7、图标命名以 模块 + 作用 + 类型 命名，（作用背景用bg，普通图片用ic，）如： share_ic_link.png（复制链接） share_ic_moment.png（分享到朋友圈） share_ic_qq.png（分享到 QQ 好友） share_ic_qzone.png（分享到 QQ 空间） share_bg_wechat.png（分享到微信好友） 8、String ID命名以模块 + 功能来命名，如： &lt;!-- 主界面 --&gt; &lt;string name=&quot;home_nav_index&quot;&gt;首页&lt;/string&gt; &lt;string name=&quot;home_nav_found&quot;&gt;发现&lt;/string&gt; &lt;string name=&quot;home_nav_message&quot;&gt;消息&lt;/string&gt; &lt;string name=&quot;home_nav_me&quot;&gt;我的&lt;/string&gt; &lt;string name=&quot;home_exit_hint&quot;&gt;再按一次退出&lt;/string&gt; &lt;!-- 登录界面 --&gt; &lt;string name=&quot;login_register&quot;&gt;注册&lt;/string&gt; &lt;string name=&quot;login_phone_hint&quot;&gt;请输入手机号&lt;/string&gt; &lt;string name=&quot;login_password_hint&quot;&gt;请输入密码&lt;/string&gt; &lt;string name=&quot;login_forget&quot;&gt;忘记密码？&lt;/string&gt; &lt;string name=&quot;login_text&quot;&gt;登录&lt;/string&gt; &lt;string name=&quot;login_other&quot;&gt;其他登录方式&lt;/string&gt; 9、View ID命名以 控件的缩写 + 模块名 + 作用 来命名，如： @+id/R.id.rg_login_type @+id/R.id.et_login_phone @+id/R.id.et_login_sms @+id/R.id.et_login_password @+id/R.id.btn_login_commit 常用控件缩写： TextView tvEditText etButton btnImageView ivImageButton ibListView lvRecyclerView rvRadioButton rbRadioGroup rgProgressBar pbCheckBox cbTableLayout tlScrollView svLinearLayout llRelativeLayout rlFrameLayout fl 10、Style命名与主题相关的样式，以Theme命名结尾，控件样式以Style命名结尾，要求尽量简洁并且需要有代码注释，如： Theme: &lt;!-- 应用主题样式 --&gt; &lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.AppCompat.DayNight.NoActionBar&quot;&gt; ..... &lt;/style&gt; &lt;!-- 全屏主题样式 --&gt; &lt;style name=&quot;FullScreenTheme&quot; parent=&quot;AppTheme&quot;&gt; ..... &lt;/style&gt; &lt;!-- 闪屏页主题样式 --&gt; &lt;style name=&quot;SplashTheme&quot; parent=&quot;FullScreenTheme&quot;&gt; ..... &lt;/style&gt; 控件： &lt;!-- 默认圆角按钮样式 --&gt; &lt;style name=&quot;ButtonStyle&quot; parent=&quot;Widget.AppCompat.Button.Borderless&quot;&gt; ..... &lt;/style&gt; &lt;!-- 不带圆角按钮样式 --&gt; &lt;style name=&quot;RectButtonStyle&quot; parent=&quot;ButtonStyle&quot;&gt; ..... &lt;/style&gt; &lt;!-- 默认文本框样式 --&gt; &lt;style name=&quot;EditTextStyle&quot;&gt; ..... &lt;/style&gt; &lt;!-- 验证码按钮样式 --&gt; &lt;style name=&quot;CountdownViewStyle&quot;&gt; ..... &lt;/style&gt; 11、color以color+ 色值来命名，不建议以作用来命名，会有很多重复的，如： &lt;color name=&quot;color_FF8B33&quot;&gt;#FF8B33&lt;/color&gt; &lt;color name=&quot;color_FEF6F1&quot;&gt;#FEF6F1&lt;/color&gt; &lt;color name=&quot;color_EFF5FA&quot;&gt;#EFF5FA&lt;/color&gt; &lt;color name=&quot;color_399BF1&quot;&gt;#399BF1&lt;/color&gt; &lt;color name=&quot;color_F0FAF6&quot;&gt;#F0FAF6&lt;/color&gt; 插眼 插眼GitHUb]]></content>
+    <content type="text"><![CDATA[Android&amp;Java命名规范1、变量命名 严禁使用中文或者中文拼音进行重命名 使用驼峰式命名风格（单词最好控制在三个以内） 局部变量应用作用来命名 // 命名规范附带技巧（当布局中同个类型的控件只有一个的时候，也可以这样命名） TextView textView; RecyclerView recyclerView; 成员变量必须以小m开头，如： String mName; TextView mNameView; FrameLayout mNameLayout; 布尔值不应该以is开头，如 // 错误写法示例 private boolean mIsDebug = false; boolean isDebug = false; // 正确写法示例 private boolean mDebug = false; boolean debug = false; 静态变量用小s开头，如： static Handler sHandler; 静态常量全大写 static final String REQUEST_INSTALL_PACKAGES; 2、方法命名initXX： 初始化相关方法，使用 init 为前缀标识，如初始化布局 initView isXX： 方法返回值为 boolean 型的请使用 is 或 check 为前缀标识 getXX： 返回某个值的方法，使用 get 为前缀标识，例如 getName setXX： 设置某个属性值，使用 set 为前缀标识，例如 setName handleXX/processXX： 对数据进行处理的方法，例如 handleMessage displayXX/showXX： 弹出提示框和提示信息，例如 showDialog updateXX： 更新某个东西，例如 updateData saveXX： 保存某个东西，例如 saveData resetXX： 重置某个东西，例如 resetData clearXX： 清除某个东西，例如 clearData removeXX： 移除数据或者视图等，例如 removeView drawXX： 绘制数据或效果相关的，使用 draw 前缀标识，例如 drawText 3、类文件命名业务模块，以 模块 + 类型 命名，如： HomeActivity.java SettingFragment.java HomeAdapter.java AddressDialog.java 技术模块请以类的 作用 来命名，如： CrashHandler.java GridSpaceDecoration.java PickerLayoutManager.java 4、接口命名监听事件：参考View的写法和命名 public class View { private View.OnClickListener mListener; public void setOnClickListener(OnClickListener listener) { mListener = listener; } public interface OnClickListener { void onClick(View v); } } 回调事件：参考Handler的学法和命名 public class Handler { public interface Callback { boolean handleMessage(Message msg); } } 5、布局文件命名以 模块 + 类型 来命名，如 home_activity.xml setting_fragment.xml menu_item.xml address_dialog.xml 这样写的好处在于，由于 res 文件夹下是没有层级概念的,通过前缀的命名可以帮助我们更好定位到同一模块下的资源 例如分享对话框中，有对话框 Root 布局和 Item 布局 share_dialog.xml（Root 布局） share_item.xml（Item 布局） 6、drawable资源文件命名以 模块 + 作用 + 类型命名, 如 user_round_shape.xml user_text_selector button_rect_selector.xml（通用直角按钮样式） button_round_selector.xml（通用圆角按钮样式） 7、图标命名以 模块 + 作用 + 类型 命名，（作用背景用bg，普通图片用ic，）如： share_ic_link.png（复制链接） share_ic_moment.png（分享到朋友圈） share_ic_qq.png（分享到 QQ 好友） share_ic_qzone.png（分享到 QQ 空间） share_bg_wechat.png（分享到微信好友） 8、String ID命名以模块 + 功能来命名，如： &lt;!-- 主界面 --&gt; &lt;string name=&quot;home_nav_index&quot;&gt;首页&lt;/string&gt; &lt;string name=&quot;home_nav_found&quot;&gt;发现&lt;/string&gt; &lt;string name=&quot;home_nav_message&quot;&gt;消息&lt;/string&gt; &lt;string name=&quot;home_nav_me&quot;&gt;我的&lt;/string&gt; &lt;string name=&quot;home_exit_hint&quot;&gt;再按一次退出&lt;/string&gt; &lt;!-- 登录界面 --&gt; &lt;string name=&quot;login_register&quot;&gt;注册&lt;/string&gt; &lt;string name=&quot;login_phone_hint&quot;&gt;请输入手机号&lt;/string&gt; &lt;string name=&quot;login_password_hint&quot;&gt;请输入密码&lt;/string&gt; &lt;string name=&quot;login_forget&quot;&gt;忘记密码？&lt;/string&gt; &lt;string name=&quot;login_text&quot;&gt;登录&lt;/string&gt; &lt;string name=&quot;login_other&quot;&gt;其他登录方式&lt;/string&gt; 9、View ID命名以 控件的缩写 + 模块名 + 作用 来命名，如： @+id/R.id.rg_login_type @+id/R.id.et_login_phone @+id/R.id.et_login_sms @+id/R.id.et_login_password @+id/R.id.btn_login_commit 常用控件缩写： TextView tvEditText etButton btnImageView ivImageButton ibListView lvRecyclerView rvRadioButton rbRadioGroup rgProgressBar pbCheckBox cbTableLayout tlScrollView svLinearLayout llRelativeLayout rlFrameLayout fl 10、Style命名与主题相关的样式，以Theme命名结尾，控件样式以Style命名结尾，要求尽量简洁并且需要有代码注释，如： Theme: &lt;!-- 应用主题样式 --&gt; &lt;style name=&quot;AppTheme&quot; parent=&quot;Theme.AppCompat.DayNight.NoActionBar&quot;&gt; ..... &lt;/style&gt; &lt;!-- 全屏主题样式 --&gt; &lt;style name=&quot;FullScreenTheme&quot; parent=&quot;AppTheme&quot;&gt; ..... &lt;/style&gt; &lt;!-- 闪屏页主题样式 --&gt; &lt;style name=&quot;SplashTheme&quot; parent=&quot;FullScreenTheme&quot;&gt; ..... &lt;/style&gt; 控件： &lt;!-- 默认圆角按钮样式 --&gt; &lt;style name=&quot;ButtonStyle&quot; parent=&quot;Widget.AppCompat.Button.Borderless&quot;&gt; ..... &lt;/style&gt; &lt;!-- 不带圆角按钮样式 --&gt; &lt;style name=&quot;RectButtonStyle&quot; parent=&quot;ButtonStyle&quot;&gt; ..... &lt;/style&gt; &lt;!-- 默认文本框样式 --&gt; &lt;style name=&quot;EditTextStyle&quot;&gt; ..... &lt;/style&gt; &lt;!-- 验证码按钮样式 --&gt; &lt;style name=&quot;CountdownViewStyle&quot;&gt; ..... &lt;/style&gt; 11、color以color+ 色值来命名，不建议以作用来命名，会有很多重复的，如： &lt;color name=&quot;color_FF8B33&quot;&gt;#FF8B33&lt;/color&gt; &lt;color name=&quot;color_FEF6F1&quot;&gt;#FEF6F1&lt;/color&gt; &lt;color name=&quot;color_EFF5FA&quot;&gt;#EFF5FA&lt;/color&gt; &lt;color name=&quot;color_399BF1&quot;&gt;#399BF1&lt;/color&gt; &lt;color name=&quot;color_F0FAF6&quot;&gt;#F0FAF6&lt;/color&gt; 插眼 插眼GitHUb]]></content>
       <categories>
         <category>standard</category>
       </categories>
@@ -47,7 +77,7 @@
   </entry>
   <entry>
     <title><![CDATA[Retrofit]]></title>
-    <url>%2FAaronYang23.github.io%2F2021%2F02%2F05%2FLibrary%2FRetrofit%2F</url>
+    <url>%2FAaronYang23.github.io%2F2021%2F02%2F05%2FAndroid%2FLibrary%2FRetrofit%2F</url>
     <content type="text"><![CDATA[RxJava2出现:Unable to create call adapter for io.reactivex.Flowablehttps://www.cnblogs.com/tonycheng93/p/6346466.html]]></content>
   </entry>
   <entry>
@@ -84,7 +114,7 @@
   </entry>
   <entry>
     <title><![CDATA[Arouter]]></title>
-    <url>%2FAaronYang23.github.io%2F2021%2F02%2F01%2F%E6%9E%B6%E6%9E%84%2FArouter%2F</url>
+    <url>%2FAaronYang23.github.io%2F2021%2F02%2F01%2FAndroid%2FLibrary%2FArouter%EF%BC%88%E4%B8%80%EF%BC%89%2F</url>
     <content type="text"><![CDATA[官方文档一、添加依赖和配置：//All Mudule android { defaultConfig { ... //注意：这块代码必须每个模块都加上，不管有没有引用 //AROUTER_MODULE_NAME这个跟版本有关，低版本是小写的 javaCompileOptions { annotationProcessorOptions { arguments = [AROUTER_MODULE_NAME: project.getName()] } } } } //Need Arouter Module dependencies { // 替换成最新版本, 需要注意的是api // 要与compiler匹配使用，均使用最新版可以保证兼容 compile &apos;com.alibaba:arouter-api:x.x.x&apos; // 因为上面说compile 其他模块都可以引用，但是下面compiler必须需要路由的model都引用(主要是没法api声明) annotationProcessor &apos;com.alibaba:arouter-compiler:x.x.x&apos; ... } 二、基本使用查看官方文档 不做记录// 构建标准的路由请求 ARouter.getInstance().build(&quot;/home/main&quot;).navigation(); // 构建标准的路由请求，并指定分组a ARouter.getInstance().build(&quot;/home/main&quot;, &quot;ap&quot;).navigation(); // 构建标准的路由请求，startActivityForResult // navigation的第一个参数必须是Activity，第二个参数则是RequestCode ARouter.getInstance().build(&quot;/home/main&quot;, &quot;ap&quot;).navigation(this, 5); // 直接传递Bundle Bundle params = new Bundle(); ARouter.getInstance() .build(&quot;/home/main&quot;) .with(params) .navigation(); // 指定Flag ARouter.getInstance() .build(&quot;/home/main&quot;) .withFlags(); .navigation(); // 获取Fragment Fragment fragment = (Fragment) ARouter.getInstance().build(&quot;/test/fragment&quot;).navigation(); // 对象传递 ARouter.getInstance() .withObject(&quot;key&quot;, new TestObj(&quot;Jack&quot;, &quot;Rose&quot;)) .navigation(); // 觉得接口不够多，可以直接拿出Bundle赋值 ARouter.getInstance() .build(&quot;/home/main&quot;) .getExtra(); // 转场动画(常规方式) ARouter.getInstance() .build(&quot;/test/activity2&quot;) .withTransition(R.anim.slide_in_bottom, R.anim.slide_out_bottom) .navigation(this); // 转场动画(API16+) ActivityOptionsCompat compat = ActivityOptionsCompat. makeScaleUpAnimation(v, v.getWidth() / 2, v.getHeight() / 2, 0, 0); // ps. makeSceneTransitionAnimation 使用共享元素的时候，需要在navigation方法中传入当前Activity ARouter.getInstance() .build(&quot;/test/activity2&quot;) .withOptionsCompat(compat) .navigation(); // 使用绿色通道(跳过所有的拦截器) ARouter.getInstance().build(&quot;/home/main&quot;).greenChannel().navigation(); // 使用自己的日志工具打印日志 ARouter.setLogger(); // 使用自己提供的线程池 ARouter.setExecutor(); 三、项目中的规划2个方案 1.统一ArouterPathConstants类管理所有路径，方便修改只需要修改变量即可2.分模块创建对应的PathConstants类，然后所有类可以集合放在一个module中，这样做是如文章所说，避免所有人员可操作base库 四、遇到的问题： 因为一开始搭框架，主modeleapp暂时还没有依赖其他模块，导致一直报错找不到路径，哎 所以请看你 主App的build.gradle中，是否把你需要路由的模块引入进来，果你模块没引入进来，那么Arouter铁定找不到 其他原因： &quot;W/ARouter::: ARouter::There is no route match the path [/xxx/xxx], in group [xxx][ ]&quot; 通常来说这种情况是没有找到目标页面，目标不存在 如果这个页面是存在的，那么您可以按照下面的步骤进行排查 1、检查目标页面的注解是否配置正确，正确的注解形式应该是 (@Route(path=&quot;/test/test&quot;), 如没有特殊需求，请勿指定group字段，废弃功能) 2、检查目标页面所在的模块的gradle脚本中是否依赖了 arouter-compiler sdk (需要注意的是，要使用apt依赖，而不是compile关键字依赖) 3、检查主app是否依赖了其他组件module，没有依赖上肯定找不到 4、检查编译打包日志，是否出现了形如 ARouter::�Compiler &gt;&gt;&gt; xxxxx 的日志，日志中会打印出发现的路由目标 启动App的时候，开启debug、log(openDebug/openLog), 查看映射表是否已经被扫描出来，形如 D/ARouter::: LogisticsCenter has already been loaded, GroupIndex[4]，GroupIndex &gt; 0]]></content>
   </entry>
   <entry>
@@ -110,7 +140,7 @@
   </entry>
   <entry>
     <title><![CDATA[Glide]]></title>
-    <url>%2FAaronYang23.github.io%2F2021%2F01%2F23%2FLibrary%2FGlide%2F</url>
+    <url>%2FAaronYang23.github.io%2F2021%2F01%2F23%2FAndroid%2FLibrary%2FGlide%2F</url>
     <content type="text"><![CDATA[glide设置banner加载出来的图片fixXY，加载失败holder占位图Center_CropGlide.with(mContext.getApplicationContext()) .applyDefaultRequestOptions(new RequestOptions().error(R.mipmap.logo_loading).placeholder(R.mipmap.logo_loading).dontAnimate()) // .asBitmap() .listener(new RequestListener&lt;Bitmap&gt;() { //通过监听来设置imageview的scaletype @Override public boolean onLoadFailed(@Nullable GlideException e, Object model, Target&lt;Bitmap&gt; target, boolean isFirstResource) { holder.imageView.setScaleType(ImageView.ScaleType.CENTER_CROP); return false; } @Override public boolean onResourceReady(Bitmap resource, Object model, Target&lt;Bitmap&gt; target, DataSource dataSource, boolean isFirstResource) { holder.imageView.setScaleType(ImageView.ScaleType.FIT_XY); return false; } }) .centerCrop() // .load(data.getAdvertImage()) .load(mContext.getDrawable(R.mipmap.logo_loading)) .into(holder.imageView);]]></content>
   </entry>
   <entry>
@@ -212,7 +242,7 @@
   </entry>
   <entry>
     <title><![CDATA[Kotlin]]></title>
-    <url>%2FAaronYang23.github.io%2F2021%2F01%2F06%2FKotlin%2F</url>
+    <url>%2FAaronYang23.github.io%2F2021%2F01%2F06%2FKotlin%2FKotlin%2F</url>
     <content type="text"><![CDATA[Kotlin学习笔记（一）基础声明类class Person(name:String){ } 抽象类：接口：属性：函数：为空设置常规语法类型判断：条件控制：循环控制：]]></content>
       <categories>
         <category>Android</category>
@@ -322,7 +352,7 @@
   <entry>
     <title><![CDATA[android 代码规范lint]]></title>
     <url>%2FAaronYang23.github.io%2F2019%2F08%2F08%2FMine%20Todo%2Fandroid-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83lint%2F</url>
-    <content type="text"><![CDATA[Android Lint 阿里代码规范 &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD hexo 新建文本 头标题设置如何 带有 catrgories 5287d0c0ee5bc5df775d19ad4befd2583ff0fa34]]></content>
+    <content type="text"><![CDATA[Android Lint 阿里代码规范 &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD hexo 新建文本 头标题设置如何 带有 catrgories 5287d0c0ee5bc5df775d19ad4befd2583ff0fa34 kotlin环境配置： ext.kotlin_version = ‘1.3.72’classpath “org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version” implementation &quot;androidx.core:core-ktx:+&quot; implementation &quot;org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version&quot;]]></content>
   </entry>
   <entry>
     <title><![CDATA[mac快捷键]]></title>
@@ -847,17 +877,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hello Hack So ！！！]]></title>
-    <url>%2FAaronYang23.github.io%2F2017%2F10%2F10%2FGit%2FHexoBlog%2FHello%20Hack%20So%20!%2F</url>
-    <content type="text"><![CDATA[今天是建好博客的第一天，关于此博客，我先立一个小flag： 1、如何写好博客，博客的编排与风格； 2、我的博客内容模块的设计：技术，摘录，感悟随笔。。 3、目前是用的别人的主题，以后要设计自己的博客站风格。 用Hexo创建个人博客指引（链接）： -初始化:http://www.jianshu.com/p/b06222fbc135 -主题更换:http://blog.csdn.net/qq_18661793/article/details/51864416 -部署至Github Page：http://www.jianshu.com/p/9d2e241a0cd4 -本地访问地址:http://localhost:4000/ 基本使用：-hexo new “Hello”-hexo generate-hexo server更新:(拷贝public/目录下的文件)-cd username.github.io-git add -A-git commit -m “Add blog file.” git push -u origin masterps:-修改日志博客内容本地的会即时更新不需要在generate，但是根目录下的配置需要。 总结：有自己的小窝了!!!]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[MarkDown]]></title>
     <url>%2FAaronYang23.github.io%2F2017%2F10%2F10%2FGit%2FHexoBlog%2FMarkDown%2F</url>
     <content type="text"><![CDATA[#MrakDown语法 基本语法：标题 分级标题：#、##、### 加粗：两个个星号包裹：粗体 斜体：一个星号包裹：斜体 列表 无序列表：- 在要子列表就加两空格 有序列表: 1.2. 分割线 三个星号”***”或者”-“ 引用 引入文字 文字前面加”&gt;” 引入代码 方式一:换行加tab ArrayList list1 = (ArrayList) allListData.get(0).getBooks(); adapter1.setNewData(list1); 方式二：使用&lt;blockquote&gt;。（不是单引号而是左上角的ESC下面~中的）ArrayList&lt;BookBean&gt; list1 = (ArrayList&lt;BookBean&gt;) allListData.get(0).getBooks(); 引入标记文字或者会被翻译的md语句块 用包裹 链接 插入链接： 链接为[](),ex:百度 图片 基本写法： 比插入链接多一个非号：![]() 插入url: ![描述&amp;未加载显示的图片]{url} 插入本地图片，可选绝对和相对路径，推荐写相对路径 如果图片与.md文件在同一目录下 其父路径用“..”表示，例如 ![avatar](../buildWebsites.jpg) 或者: ![图片出错](../_posts/blogimages/1.jpg) 另外markdown在写hexo网页时，相对路径既可以从当前位置起步识别，也可以从主题下的resource文件里开始匹配。 通过这些方式，你可以轻松的通过相对路径定位到图片的任意一个位置。 ps:写。。之后的描述路径从当前文件所在的父文件夹开始,../即表示当前文件的父文件夹,如果在子文件夹下，贼用多个../回溯 修改宽高：![描述](url){:height=&quot;50%&quot; width=&quot;50%&quot;} `![描述](url){:height=&quot;100px&quot; width=&quot;400px&quot;}` hexo: `&lt;img src=&quot;url&quot; width=&quot;自定义的宽&quot;,heigt=&quot;自定义的高&quot;&gt;` 居中显示： `&lt;div align=&quot;center&quot;&gt;&lt;img src=&quot;url&quot; width=&quot;自定义的宽&quot;,heigt=&quot;自定义的高&quot;&gt;&lt;/div&gt;` 表格 表头 表头 单元格 单元格 单元格 单元格 左对齐标题 右对齐标题 居中对齐标题 短文本 中等文本 稍微长一点的文本 稍微长一点的文本 短文本 中等文本 ###编辑工具推荐 Mac推荐： Mou Windows推荐:MarkdownPad,被很多人称赞为windows 平台最好用的markdown编辑器。 在线编辑器： Chrome 插件:Marxico ,中文名马克飞象 StackEdit 作业部落]]></content>
@@ -866,6 +885,17 @@
       </categories>
       <tags>
         <tag>MarkDown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello Hack So ！！！]]></title>
+    <url>%2FAaronYang23.github.io%2F2017%2F10%2F10%2FGit%2FHexoBlog%2FHello%20Hack%20So%20!%2F</url>
+    <content type="text"><![CDATA[今天是建好博客的第一天，关于此博客，我先立一个小flag： 1、如何写好博客，博客的编排与风格； 2、我的博客内容模块的设计：技术，摘录，感悟随笔。。 3、目前是用的别人的主题，以后要设计自己的博客站风格。 用Hexo创建个人博客指引（链接）： -初始化:http://www.jianshu.com/p/b06222fbc135 -主题更换:http://blog.csdn.net/qq_18661793/article/details/51864416 -部署至Github Page：http://www.jianshu.com/p/9d2e241a0cd4 -本地访问地址:http://localhost:4000/ 基本使用：-hexo new “Hello”-hexo generate-hexo server更新:(拷贝public/目录下的文件)-cd username.github.io-git add -A-git commit -m “Add blog file.” git push -u origin masterps:-修改日志博客内容本地的会即时更新不需要在generate，但是根目录下的配置需要。 总结：有自己的小窝了!!!]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
