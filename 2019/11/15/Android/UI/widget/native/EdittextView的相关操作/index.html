@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="ArronYang">
 <meta property="og:description" content="EdittextView的相关操作一、增加过滤器1、有时候根据需求需要限制EditText输入的字符类型，如空格、特殊字符、表情等，这时候通过设置过滤器– InputFilter 进行过滤 InputFilter filter = new InputFilter(){     @Override    public CharSequence filter(CharSequence source,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-15T09:16:15.344Z">
+<meta property="og:updated_time" content="2021-03-19T08:06:52.318Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="EditTextView">
 <meta name="twitter:description" content="EdittextView的相关操作一、增加过滤器1、有时候根据需求需要限制EditText输入的字符类型，如空格、特殊字符、表情等，这时候通过设置过滤器– InputFilter 进行过滤 InputFilter filter = new InputFilter(){     @Override    public CharSequence filter(CharSequence source,">
@@ -349,8 +349,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-01-15T17:16:15+08:00">
-                2021-01-15
+              <time title="更新于" itemprop="dateModified" datetime="2021-03-19T16:06:52+08:00">
+                2021-03-19
               </time>
             
           </span>
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  291
+                  797
                 </span>
               
 
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -441,7 +441,7 @@
       
 
       
-        <h1 id="EdittextView的相关操作"><a href="#EdittextView的相关操作" class="headerlink" title="EdittextView的相关操作"></a>EdittextView的相关操作</h1><h2 id="一、增加过滤器"><a href="#一、增加过滤器" class="headerlink" title="一、增加过滤器"></a>一、增加过滤器</h2><p>1、有时候根据需求需要限制EditText输入的字符类型，如空格、特殊字符、表情等，这时候通过设置过滤器– <code>InputFilter</code> 进行过滤</p>
+        <h1 id="EdittextView的相关操作"><a href="#EdittextView的相关操作" class="headerlink" title="EdittextView的相关操作"></a>EdittextView的相关操作</h1><h3 id="一、增加过滤器"><a href="#一、增加过滤器" class="headerlink" title="一、增加过滤器"></a>一、增加过滤器</h3><p>1、有时候根据需求需要限制EditText输入的字符类型，如空格、特殊字符、表情等，这时候通过设置过滤器– <code>InputFilter</code> 进行过滤</p>
 <pre><code>InputFilter filter = new InputFilter(){
     @Override
    public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
@@ -474,7 +474,7 @@ edit.setFilters(new InputFilter[](filter));  //edit是设置一组过滤器
     }
 
 }
-</code></pre><h2 id="1、回车不换行"><a href="#1、回车不换行" class="headerlink" title="1、回车不换行"></a>1、回车不换行</h2><p>回车不换行即是监听回车键的事件</p>
+</code></pre><h3 id="监听键盘按键点击事件"><a href="#监听键盘按键点击事件" class="headerlink" title="监听键盘按键点击事件"></a>监听键盘按键点击事件</h3><p>1、回车不换行<br>回车不换行即是监听回车键的事件</p>
 <pre><code>edit.setOnEditActionLisener(new TextView.OnEditorActionListener() {  
            @Override  
            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {  
@@ -482,7 +482,105 @@ edit.setFilters(new InputFilter[](filter));  //edit是设置一组过滤器
                //或者是keycode== KeyEvent.KEYCODE_ENTER，返回true消费掉即可
            }  
        });
-</code></pre>
+</code></pre><h3 id="设置行间距"><a href="#设置行间距" class="headerlink" title="设置行间距"></a>设置行间距</h3><p>修改行间距（最简单）</p>
+<p>在xml中设置</p>
+<p>（1）lineSpacingMultiplier属性，意思是行与行之间的距离倍数，相当于word里面的行间距，例如1.5倍行间距</p>
+<pre><code>android:lineSpacingMultiplier=&quot;1.5&quot;
+</code></pre><p>（2）lineSpacingExtra属性，直接设定行与行之间的距离，每行相距3dp</p>
+<pre><code>android:lineSpacingExtra=&quot;3dp&quot;
+</code></pre><p>通过上面的任何一种方法都可以实现行间距的调整。</p>
+<h3 id="禁止Edittext选中复制粘贴-填空题用到"><a href="#禁止Edittext选中复制粘贴-填空题用到" class="headerlink" title="禁止Edittext选中复制粘贴(填空题用到)"></a>禁止Edittext选中复制粘贴(填空题用到)</h3><pre><code>@SuppressLint(&quot;ClickableViewAccessibility&quot;)
+public void disableCopyAndPaste(final EditText editText) {
+    try {
+        if (editText == null) {
+            return ;
+        }
+
+        editText.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                return true;
+            }
+        });
+        editText.setLongClickable(false);
+        editText.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // setInsertionDisabled when user touches the view
+                    setInsertionDisabled(editText);
+                }
+
+                return false;
+            }
+        });
+        editText.setCustomSelectionActionModeCallback(new ActionMode.Callback() {
+            @Override
+            public boolean onCreateActionMode(ActionMode mode, Menu menu) {
+                return false;
+            }
+
+            @Override
+            public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
+                return false;
+            }
+
+            @Override
+            public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+                return false;
+            }
+
+            @Override
+            public void onDestroyActionMode(ActionMode mode) {
+
+            }
+        });
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+
+private void setInsertionDisabled(EditText editText) {
+    try {
+        Field editorField = TextView.class.getDeclaredField(&quot;mEditor&quot;);
+        editorField.setAccessible(true);
+        Object editorObject = editorField.get(editText);
+
+        // if this view supports insertion handles
+        Class editorClass = Class.forName(&quot;android.widget.Editor&quot;);
+        Field mInsertionControllerEnabledField = editorClass.getDeclaredField(&quot;mInsertionControllerEnabled&quot;);
+        mInsertionControllerEnabledField.setAccessible(true);
+        mInsertionControllerEnabledField.set(editorObject, false);
+
+        // if this view supports selection handles
+        Field mSelectionControllerEnabledField = editorClass.getDeclaredField(&quot;mSelectionControllerEnabled&quot;);
+        mSelectionControllerEnabledField.setAccessible(true);
+        mSelectionControllerEnabledField.set(editorObject, false);
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+</code></pre><p>然后使用 <code>disableCopyAndPaste(editText);</code> 即可</p>
+<h3 id="光标样式修改"><a href="#光标样式修改" class="headerlink" title="光标样式修改"></a>光标样式修改</h3><pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:shape=&quot;rectangle&quot; &gt;
+    &lt;size 
+        android:width=&quot;2dip&quot; /&gt;   //设置高度无用
+    &lt;solid
+        android:color=&quot;@color/red&quot; /&gt;
+    &lt;padding 
+        android:top=&quot;2sp&quot;      //光标上移距离  因为光标高度是matchHeight的
+        android:bottom=&quot;-11sp&quot; /&gt;    //光标下移动距离，要缩短即这里填辅助
+&lt;/shape&gt;
+
+
+
+然后edittext设置：
+ android:textCursorDrawable=&quot;@drawable/xxx
+</code></pre><h3 id="Edit设置行间距之后，光标会很长处理"><a href="#Edit设置行间距之后，光标会很长处理" class="headerlink" title="Edit设置行间距之后，光标会很长处理"></a>Edit设置行间距之后，光标会很长处理</h3><pre><code>光标会默认matchHeight,如果只有单行，那么设置corsor样式即可，如果有多行那么不行，多行的和尾行的高度会不一致，这里处理方法用
+LineHeightEditText
+</code></pre><p>github:<a href="https://github.com/hanks-zyh/LineHeightEditText" target="_blank" rel="noopener">LineHeightEditText</a></p>
+
       
     </div>
     
@@ -627,7 +725,7 @@ edit.setFilters(new InputFilter[](filter));  //edit是设置一组过滤器
               
                 <a href="/AaronYang23.github.io/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">108</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -638,7 +736,7 @@ edit.setFilters(new InputFilter[](filter));  //edit是设置一组过滤器
               
               <div class="site-state-item site-state-categories">
                 <a href="/AaronYang23.github.io/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -649,7 +747,7 @@ edit.setFilters(new InputFilter[](filter));  //edit是设置一组过滤器
               
               <div class="site-state-item site-state-tags">
                 <a href="/AaronYang23.github.io/tags/index.html">
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -712,7 +810,7 @@ edit.setFilters(new InputFilter[](filter));  //edit是设置一组过滤器
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#EdittextView的相关操作"><span class="nav-number">1.</span> <span class="nav-text">EdittextView的相关操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、增加过滤器"><span class="nav-number">1.1.</span> <span class="nav-text">一、增加过滤器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1、回车不换行"><span class="nav-number">1.2.</span> <span class="nav-text">1、回车不换行</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#EdittextView的相关操作"><span class="nav-number">1.</span> <span class="nav-text">EdittextView的相关操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、增加过滤器"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、增加过滤器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#监听键盘按键点击事件"><span class="nav-number">1.0.2.</span> <span class="nav-text">监听键盘按键点击事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置行间距"><span class="nav-number">1.0.3.</span> <span class="nav-text">设置行间距</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#禁止Edittext选中复制粘贴-填空题用到"><span class="nav-number">1.0.4.</span> <span class="nav-text">禁止Edittext选中复制粘贴(填空题用到)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#光标样式修改"><span class="nav-number">1.0.5.</span> <span class="nav-text">光标样式修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Edit设置行间距之后，光标会很长处理"><span class="nav-number">1.0.6.</span> <span class="nav-text">Edit设置行间距之后，光标会很长处理</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -747,7 +845,7 @@ edit.setFilters(new InputFilter[](filter));  //edit是设置一组过滤器
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">55.1k</span>
+    <span title="Site words total count">57.2k</span>
   
   -->
 </div>
@@ -781,7 +879,7 @@ edit.setFilters(new InputFilter[](filter));  //edit是设置一组过滤器
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">55.1k</span> 字
+      博客全站共： <span class="post-count">57.2k</span> 字
     </span>
 </div>
 <!-- 新增访客统计代码 END-->

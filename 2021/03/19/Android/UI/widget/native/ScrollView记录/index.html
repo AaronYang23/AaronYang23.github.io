@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="widget,">
 
 
 
@@ -86,17 +86,18 @@
 
 
 
-<meta name="description" content="云课堂项目重构遇到的所有问题上层module报错找不到依赖module下的aar文件，明明aar文件就放在lib下面插眼 1、引入aar文件需要： 引入的module  build.gradle中添加  android {        ...  repositories {         flatDir {             dirs &amp;apos;libs&amp;apos;         }">
+<meta name="description" content="ScrollView1、Scrollview始终显示滚动条 scrollview的:android:fadeScrollbars=&amp;quot;false&amp;quot;  表示始终显示垂直滚动条 2、解决Recyclerview和 NestedSrollview的滑动冲突 NestedSrcollview: android:fillViewport=&amp;quot;true&amp;quot;  RecycleV">
+<meta name="keywords" content="widget">
 <meta property="og:type" content="article">
-<meta property="og:title" content="云课堂项目重构遇到的所有问题">
-<meta property="og:url" content="https://aaronyang23.github.io/2021/03/09/架构/云课堂项目重构遇到的所有问题/index.html">
+<meta property="og:title" content="ScrollView记录">
+<meta property="og:url" content="https://aaronyang23.github.io/2021/03/19/Android/UI/widget/native/ScrollView记录/index.html">
 <meta property="og:site_name" content="ArronYang">
-<meta property="og:description" content="云课堂项目重构遇到的所有问题上层module报错找不到依赖module下的aar文件，明明aar文件就放在lib下面插眼 1、引入aar文件需要： 引入的module  build.gradle中添加  android {        ...  repositories {         flatDir {             dirs &amp;apos;libs&amp;apos;         }">
+<meta property="og:description" content="ScrollView1、Scrollview始终显示滚动条 scrollview的:android:fadeScrollbars=&amp;quot;false&amp;quot;  表示始终显示垂直滚动条 2、解决Recyclerview和 NestedSrollview的滑动冲突 NestedSrcollview: android:fillViewport=&amp;quot;true&amp;quot;  RecycleV">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-03-09T12:22:39.795Z">
+<meta property="og:updated_time" content="2021-03-26T10:46:43.070Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="云课堂项目重构遇到的所有问题">
-<meta name="twitter:description" content="云课堂项目重构遇到的所有问题上层module报错找不到依赖module下的aar文件，明明aar文件就放在lib下面插眼 1、引入aar文件需要： 引入的module  build.gradle中添加  android {        ...  repositories {         flatDir {             dirs &amp;apos;libs&amp;apos;         }">
+<meta name="twitter:title" content="ScrollView记录">
+<meta name="twitter:description" content="ScrollView1、Scrollview始终显示滚动条 scrollview的:android:fadeScrollbars=&amp;quot;false&amp;quot;  表示始终显示垂直滚动条 2、解决Recyclerview和 NestedSrollview的滑动冲突 NestedSrcollview: android:fillViewport=&amp;quot;true&amp;quot;  RecycleV">
 
 
 
@@ -126,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://aaronyang23.github.io/2021/03/09/架构/云课堂项目重构遇到的所有问题/">
+  <link rel="canonical" href="https://aaronyang23.github.io/2021/03/19/Android/UI/widget/native/ScrollView记录/">
 
 
 
 
 
-  <title>云课堂项目重构遇到的所有问题 | ArronYang</title>
+  <title>ScrollView记录 | ArronYang</title>
   
 
 
@@ -303,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://aaronyang23.github.io/AaronYang23.github.io/2021/03/09/架构/云课堂项目重构遇到的所有问题/">
+    <link itemprop="mainEntityOfPage" href="https://aaronyang23.github.io/AaronYang23.github.io/2021/03/19/Android/UI/widget/native/ScrollView记录/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AaronYang">
@@ -320,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">云课堂项目重构遇到的所有问题</h1>
+          <h1 class="post-title" itemprop="name headline">ScrollView记录</h1>
         
 
         <div class="post-meta">
@@ -332,8 +333,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-03-09T20:18:44+08:00">
-                2021-03-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-03-19T15:08:29+08:00">
+                2021-03-19
               </time>
             
 
@@ -348,8 +349,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-03-09T20:22:39+08:00">
-                2021-03-09
+              <time title="更新于" itemprop="dateModified" datetime="2021-03-26T18:46:43+08:00">
+                2021-03-26
               </time>
             
           </span>
@@ -403,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  138
+                  55
                 </span>
               
 
@@ -440,34 +441,15 @@
       
 
       
-        <h1 id="云课堂项目重构遇到的所有问题"><a href="#云课堂项目重构遇到的所有问题" class="headerlink" title="云课堂项目重构遇到的所有问题"></a>云课堂项目重构遇到的所有问题</h1><h3 id="上层module报错找不到依赖module下的aar文件，明明aar文件就放在lib下面"><a href="#上层module报错找不到依赖module下的aar文件，明明aar文件就放在lib下面" class="headerlink" title="上层module报错找不到依赖module下的aar文件，明明aar文件就放在lib下面"></a>上层module报错找不到依赖module下的aar文件，明明aar文件就放在lib下面</h3><p><a href="https://www.jianshu.com/p/5f0edc95a398" target="_blank" rel="noopener">插眼</a></p>
-<p>1、引入aar文件需要：</p>
-<pre><code>引入的module  build.gradle中添加
+        <h1 id="ScrollView"><a href="#ScrollView" class="headerlink" title="ScrollView"></a>ScrollView</h1><p>1、Scrollview始终显示滚动条</p>
+<pre><code>scrollview的:android:fadeScrollbars=&quot;false&quot;  表示始终显示垂直滚动条
+</code></pre><p>2、解决Recyclerview和 NestedSrollview的滑动冲突</p>
+<pre><code>NestedSrcollview:
+android:fillViewport=&quot;true&quot;
 
-android {
-
-      ...
-
-repositories {
-        flatDir {
-            dirs &apos;libs&apos;
-        }
-    }
-}
-</code></pre><p>2、该module下的build.gradle 添加 dependencies</p>
-<pre><code>implementation(name: &apos;name-of-aar&apos;, ext: &apos;aar&apos;)
-</code></pre><p>3、报错找不到，全局添加：</p>
-<pre><code>project下的build.gradle
-allprojects {
-    repositories {
-        google()
-        jcenter()
-        flatDir {
-              //所有的module的repositories下把library module中的libs目录添加到依赖关系中
-             dirs project(&apos;:引入了aar的module名字&apos;).file(&apos;libs&apos;)
-        }
-    }
-}
+RecycleView:       
+android:layout_height=&quot;wrap_content&quot;
+android:nestedScrollingEnabled=&quot;false&quot;
 </code></pre>
       
     </div>
@@ -494,7 +476,7 @@ allprojects {
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://aaronyang23.github.io/2021/03/09/架构/云课堂项目重构遇到的所有问题/" title="云课堂项目重构遇到的所有问题">https://aaronyang23.github.io/2021/03/09/架构/云课堂项目重构遇到的所有问题/</a>
+    <a href="https://aaronyang23.github.io/2021/03/19/Android/UI/widget/native/ScrollView记录/" title="ScrollView记录">https://aaronyang23.github.io/2021/03/19/Android/UI/widget/native/ScrollView记录/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -507,6 +489,12 @@ allprojects {
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/AaronYang23.github.io/tags/widget/" rel="tag"># widget</a>
+          
+        </div>
+      
 
       
       
@@ -516,8 +504,8 @@ allprojects {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/AaronYang23.github.io/2021/03/09/Kotlin/Kotlin随手笔记/" rel="next" title="Kotlin随手笔记">
-                <i class="fa fa-chevron-left"></i> Kotlin随手笔记
+              <a href="/AaronYang23.github.io/2021/03/13/Git/Git/开发中git分支管理/" rel="next" title="开发中git分支管理">
+                <i class="fa fa-chevron-left"></i> 开发中git分支管理
               </a>
             
           </div>
@@ -525,6 +513,10 @@ allprojects {
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/AaronYang23.github.io/2021/03/19/Git/Github/解决Github打不开问题/" rel="prev" title="解决github打不开问题">
+                解决github打不开问题 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -603,7 +595,7 @@ allprojects {
               
                 <a href="/AaronYang23.github.io/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">108</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -614,7 +606,7 @@ allprojects {
               
               <div class="site-state-item site-state-categories">
                 <a href="/AaronYang23.github.io/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -625,7 +617,7 @@ allprojects {
               
               <div class="site-state-item site-state-tags">
                 <a href="/AaronYang23.github.io/tags/index.html">
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -688,7 +680,7 @@ allprojects {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#云课堂项目重构遇到的所有问题"><span class="nav-number">1.</span> <span class="nav-text">云课堂项目重构遇到的所有问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#上层module报错找不到依赖module下的aar文件，明明aar文件就放在lib下面"><span class="nav-number">1.0.1.</span> <span class="nav-text">上层module报错找不到依赖module下的aar文件，明明aar文件就放在lib下面</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ScrollView"><span class="nav-number">1.</span> <span class="nav-text">ScrollView</span></a></li></ol></div>
             
 
           </div>
@@ -723,7 +715,7 @@ allprojects {
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">55.1k</span>
+    <span title="Site words total count">57.2k</span>
   
   -->
 </div>
@@ -757,7 +749,7 @@ allprojects {
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">55.1k</span> 字
+      博客全站共： <span class="post-count">57.2k</span> 字
     </span>
 </div>
 <!-- 新增访客统计代码 END-->

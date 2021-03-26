@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="ArronYang">
 <meta property="og:description" content="DataBinding使用：三步：1.启用 2.布局文件中的使用方式 3、代码中的使用方式 1、启用：android{ ...     dataBinding{         enabled true     } ... } 2、布局文件中如何使用布局转换成layout标签，data标签下添加variable和type，variable是属性名称，type是添加的属性类，使得布局文件中可以直接引">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-02-01T10:51:29.997Z">
+<meta property="og:updated_time" content="2021-03-25T07:37:35.903Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DataBinding">
 <meta name="twitter:description" content="DataBinding使用：三步：1.启用 2.布局文件中的使用方式 3、代码中的使用方式 1、启用：android{ ...     dataBinding{         enabled true     } ... } 2、布局文件中如何使用布局转换成layout标签，data标签下添加variable和type，variable是属性名称，type是添加的属性类，使得布局文件中可以直接引">
@@ -348,8 +348,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-02-01T18:51:29+08:00">
-                2021-02-01
+              <time title="更新于" itemprop="dateModified" datetime="2021-03-25T15:37:35+08:00">
+                2021-03-25
               </time>
             
           </span>
@@ -381,7 +381,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  320
+                  362
                 </span>
               
 
@@ -431,7 +431,15 @@
 <p>DataBinding在libmodule中onclick报错：<br>点击id会直接定位到view的视图位置<br>原因是在library module中资源ID类型不是final类型的，主model中资源ID是final类型的</p>
 <p>错误：如果有布局注释<br>记住注释也只能放在  layout里面去  不然会报错The markup in the document following the root element must be well-formed.</p>
 <p>错误  如果一直报错某个package找不到 。那么是资源文件除了问题  去databingding底下有个错误日志 里面找对应的文件会报错，<br>所以这里有一点问题就是如果修改了包路径，但是layout是不会自动更改的，然后就会报错找不到对应的路径和文件</p>
-
+<h3 id="databingd-的layout在哪个module下-生成的就是哪个module的包名"><a href="#databingd-的layout在哪个module下-生成的就是哪个module的包名" class="headerlink" title="databingd 的layout在哪个module下 生成的就是哪个module的包名"></a>databingd 的layout在哪个module下 生成的就是哪个module的包名</h3><h3 id="Didn’t-find-class-“androidx-databinding-DataBinderMapperImpl”"><a href="#Didn’t-find-class-“androidx-databinding-DataBinderMapperImpl”" class="headerlink" title="Didn’t find class “androidx.databinding.DataBinderMapperImpl”"></a>Didn’t find class “androidx.databinding.DataBinderMapperImpl”</h3><pre><code>在项目的每个module内的build文件中加入
+android {
+    ...
+    dataBinding {
+    enabled = true
+    }
+    ...
+}
+</code></pre>
       
     </div>
     
@@ -570,7 +578,7 @@
               
                 <a href="/AaronYang23.github.io/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">108</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -581,7 +589,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/AaronYang23.github.io/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -592,7 +600,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/AaronYang23.github.io/tags/index.html">
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -655,7 +663,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DataBinding"><span class="nav-number">1.</span> <span class="nav-text">DataBinding</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用："><span class="nav-number">1.1.</span> <span class="nav-text">使用：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、启用："><span class="nav-number">1.1.1.</span> <span class="nav-text">1、启用：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、布局文件中如何使用"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、布局文件中如何使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、代码中如何使用"><span class="nav-number">1.1.3.</span> <span class="nav-text">3、代码中如何使用</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DataBinding"><span class="nav-number">1.</span> <span class="nav-text">DataBinding</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用："><span class="nav-number">1.1.</span> <span class="nav-text">使用：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、启用："><span class="nav-number">1.1.1.</span> <span class="nav-text">1、启用：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、布局文件中如何使用"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、布局文件中如何使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、代码中如何使用"><span class="nav-number">1.1.3.</span> <span class="nav-text">3、代码中如何使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#databingd-的layout在哪个module下-生成的就是哪个module的包名"><span class="nav-number">1.1.4.</span> <span class="nav-text">databingd 的layout在哪个module下 生成的就是哪个module的包名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Didn’t-find-class-“androidx-databinding-DataBinderMapperImpl”"><span class="nav-number">1.1.5.</span> <span class="nav-text">Didn’t find class “androidx.databinding.DataBinderMapperImpl”</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -690,7 +698,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">55.1k</span>
+    <span title="Site words total count">57.2k</span>
   
   -->
 </div>
@@ -724,7 +732,7 @@
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">55.1k</span> 字
+      博客全站共： <span class="post-count">57.2k</span> 字
     </span>
 </div>
 <!-- 新增访客统计代码 END-->

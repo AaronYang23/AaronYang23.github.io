@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="Kotlin随手笔记强制类型转换    as">
+<meta name="description" content="Kotlin随手笔记强制类型转换    as基础类型转换：  toInt()、toFloat()异常捕获是一样另外记录：异常finally字段：是无论异常发生不发生，最终都会执行的代码。 for 循环：for(xxx in yyy) {} 循环的本次结束和中断和java一样通过continue和break   xx.forEach() 这种写法，编译器无法识别 break, continue 关键">
 <meta name="keywords" content="Kotlin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kotlin随手笔记">
 <meta property="og:url" content="https://aaronyang23.github.io/2021/03/09/Kotlin/Kotlin随手笔记/index.html">
 <meta property="og:site_name" content="ArronYang">
-<meta property="og:description" content="Kotlin随手笔记强制类型转换    as">
+<meta property="og:description" content="Kotlin随手笔记强制类型转换    as基础类型转换：  toInt()、toFloat()异常捕获是一样另外记录：异常finally字段：是无论异常发生不发生，最终都会执行的代码。 for 循环：for(xxx in yyy) {} 循环的本次结束和中断和java一样通过continue和break   xx.forEach() 这种写法，编译器无法识别 break, continue 关键">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-03-09T12:15:42.393Z">
+<meta property="og:updated_time" content="2021-03-19T07:48:52.671Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kotlin随手笔记">
-<meta name="twitter:description" content="Kotlin随手笔记强制类型转换    as">
+<meta name="twitter:description" content="Kotlin随手笔记强制类型转换    as基础类型转换：  toInt()、toFloat()异常捕获是一样另外记录：异常finally字段：是无论异常发生不发生，最终都会执行的代码。 for 循环：for(xxx in yyy) {} 循环的本次结束和中断和java一样通过continue和break   xx.forEach() 这种写法，编译器无法识别 break, continue 关键">
 
 
 
@@ -349,8 +349,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-03-09T20:15:42+08:00">
-                2021-03-09
+              <time title="更新于" itemprop="dateModified" datetime="2021-03-19T15:48:52+08:00">
+                2021-03-19
               </time>
             
           </span>
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  12
+                  332
                 </span>
               
 
@@ -441,8 +441,93 @@
       
 
       
-        <h1 id="Kotlin随手笔记"><a href="#Kotlin随手笔记" class="headerlink" title="Kotlin随手笔记"></a>Kotlin随手笔记</h1><p>强制类型转换    as </p>
+        <h1 id="Kotlin随手笔记"><a href="#Kotlin随手笔记" class="headerlink" title="Kotlin随手笔记"></a>Kotlin随手笔记</h1><h3 id="强制类型转换-as"><a href="#强制类型转换-as" class="headerlink" title="强制类型转换    as"></a>强制类型转换    as</h3><h3 id="基础类型转换：-toInt-、toFloat"><a href="#基础类型转换：-toInt-、toFloat" class="headerlink" title="基础类型转换：  toInt()、toFloat()"></a>基础类型转换：  toInt()、toFloat()</h3><h3 id="异常捕获是一样"><a href="#异常捕获是一样" class="headerlink" title="异常捕获是一样"></a>异常捕获是一样</h3><pre><code>另外记录：异常finally字段：是无论异常发生不发生，最终都会执行的代码。
+</code></pre><h3 id="for-循环："><a href="#for-循环：" class="headerlink" title="for 循环："></a>for 循环：</h3><pre><code>for(xxx in yyy) {}
+循环的本次结束和中断和java一样通过continue和break
 
+
+xx.forEach() 这种写法，编译器无法识别 break, continue 关键字了,需要使用其他招式。
+//待补充
+</code></pre><h3 id="静态常量："><a href="#静态常量：" class="headerlink" title="静态常量："></a>静态常量：</h3><p>java写法：</p>
+<pre><code>public class SystemConstat{
+
+     /**
+     * 静态常量
+     */
+    public static final String SUCCESS_VAL = &quot;success&quot;;
+
+    /**
+     * 静态变量
+     */
+    public static String CHANGE_VAL = &quot;change&quot;;
+
+}
+</code></pre><p>kotlin写法:</p>
+<pre><code>class SystemConstat{
+
+    companion object{
+        /**
+         * 相当于Java的static
+         */
+        var SUCCESS_CHANGE = &quot;CHANGE&quot;;
+
+        /**
+         * 相当于Java的 public final static
+         */
+        const val SUCCESS_PUBLIC = &quot;PUBLIC&quot;
+
+        /**
+         * 相当于Java的 private final static
+         */
+        val SUCCESS_PRIVATE = &quot;PRIVATE&quot;
+
+    }
+
+}
+</code></pre><h3 id="复合符号、判空符号-as-‘-’"><a href="#复合符号、判空符号-as-‘-’" class="headerlink" title="复合符号、判空符号  ?. ?:  !! as? ‘?’"></a>复合符号、判空符号  <code>?.</code> <code>?:</code>  <code>!!</code> <code>as?</code> ‘?’</h3><pre><code>?.是如下代码的简化：
+foo?.bar
+if (foo != null){
+    return foo.bar()
+}else{
+
+    return null
+}        
+
+
+?:
+foo?:bar
+if (foo != null){
+    return foo
+}else{
+
+    return bar
+}
+
+
+foo as? type
+if(foo is Type){
+    foo as Type
+}else{
+    null
+}
+
+
+foo!!
+if(foo!=null){
+    foo    
+}else{
+    NullPointException
+}
+
+
+?
+Type?    @nullable+Type    
+Type     @NotNull+Type
+
+参考：[Kotlin (一) 复合符号( &apos;?.&apos; &apos;?:&apos; &apos;!!&apos; &apos;as?&apos; &apos;?&apos; )](https://blog.csdn.net/lckj686/article/details/80448471?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control&amp;dist_request_id=&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.control)
+</code></pre><h3 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符"></a>三目运算符</h3><p>kotlin中没有三目运算法，替代方法为： 直接用if else 模式 ，如：</p>
+<pre><code>if(a&gt;b) a else b
+</code></pre>
       
     </div>
     
@@ -506,7 +591,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/AaronYang23.github.io/2021/03/09/架构/云课堂项目重构遇到的所有问题/" rel="prev" title="云课堂项目重构遇到的所有问题">
+              <a href="/AaronYang23.github.io/2021/03/09/framework/云课堂项目重构遇到的所有问题/" rel="prev" title="云课堂项目重构遇到的所有问题">
                 云课堂项目重构遇到的所有问题 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -587,7 +672,7 @@
               
                 <a href="/AaronYang23.github.io/archives/">
               
-                  <span class="site-state-item-count">102</span>
+                  <span class="site-state-item-count">108</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -598,7 +683,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/AaronYang23.github.io/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -609,7 +694,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/AaronYang23.github.io/tags/index.html">
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -672,7 +757,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Kotlin随手笔记"><span class="nav-number">1.</span> <span class="nav-text">Kotlin随手笔记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Kotlin随手笔记"><span class="nav-number">1.</span> <span class="nav-text">Kotlin随手笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#强制类型转换-as"><span class="nav-number">1.0.1.</span> <span class="nav-text">强制类型转换    as</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基础类型转换：-toInt-、toFloat"><span class="nav-number">1.0.2.</span> <span class="nav-text">基础类型转换：  toInt()、toFloat()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常捕获是一样"><span class="nav-number">1.0.3.</span> <span class="nav-text">异常捕获是一样</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for-循环："><span class="nav-number">1.0.4.</span> <span class="nav-text">for 循环：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态常量："><span class="nav-number">1.0.5.</span> <span class="nav-text">静态常量：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复合符号、判空符号-as-‘-’"><span class="nav-number">1.0.6.</span> <span class="nav-text">复合符号、判空符号  ?. ?:  !! as? ‘?’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三目运算符"><span class="nav-number">1.0.7.</span> <span class="nav-text">三目运算符</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -707,7 +792,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">55.1k</span>
+    <span title="Site words total count">57.2k</span>
   
   -->
 </div>
@@ -741,7 +826,7 @@
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">55.1k</span> 字
+      博客全站共： <span class="post-count">57.2k</span> 字
     </span>
 </div>
 <!-- 新增访客统计代码 END-->
