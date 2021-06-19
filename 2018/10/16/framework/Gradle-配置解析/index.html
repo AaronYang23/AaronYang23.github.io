@@ -94,10 +94,12 @@
 <meta property="og:site_name" content="ArronYang">
 <meta property="og:description" content="gradle作用gradle是一个以Groovy语言为基础的构建工具，要面向的是Java语言，在studio中的作用主要为：  项目设置配置 导入jar包 签名打包  gradle离线下载 卡在gradle building:Android Studio导入项目的时候，需要下载项目对应的gradle包，主因为在国内防火墙屏蔽的原因，导致下载的速度蜗牛般慢，所以会一直卡停在这个界面  方法一：修改项">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-02-05T03:20:21.164Z">
+<meta property="og:image" content="https://github.com/AaronYang23/BlogImages/blob/main/framework/gradle.png?raw=true">
+<meta property="og:updated_time" content="2021-04-26T09:46:00.264Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Gradle 配置解析">
 <meta name="twitter:description" content="gradle作用gradle是一个以Groovy语言为基础的构建工具，要面向的是Java语言，在studio中的作用主要为：  项目设置配置 导入jar包 签名打包  gradle离线下载 卡在gradle building:Android Studio导入项目的时候，需要下载项目对应的gradle包，主因为在国内防火墙屏蔽的原因，导致下载的速度蜗牛般慢，所以会一直卡停在这个界面  方法一：修改项">
+<meta name="twitter:image" content="https://github.com/AaronYang23/BlogImages/blob/main/framework/gradle.png?raw=true">
 
 
 
@@ -349,8 +351,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-02-05T11:20:21+08:00">
-                2021-02-05
+              <time title="更新于" itemprop="dateModified" datetime="2021-04-26T17:46:00+08:00">
+                2021-04-26
               </time>
             
           </span>
@@ -404,7 +406,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.4k
+                  1.3k
                 </span>
               
 
@@ -420,7 +422,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6
+                  5
                 </span>
               
             </div>
@@ -455,6 +457,11 @@
 <li><p>方法一：离线包下载导入<br>原因是自动下载不成功，那么我们可以手动下载回来，然后进行导入进去，查看所需gradle版本，<br>打开C:\Users\用户名.gradle\wrapper\dists\gradle-x.xx-all\xxxxxxxxxxxx<br>如果里面的gradle-xx-all.zip不完整（如0KB），则说明下载不成功，需要下载离线包放置到该目录下,也可以直接去导入的项目中查看设置的gradle 版本<br><a href="http://services.gradle.org/distributions/" target="_blank" rel="noopener">gradle版本下载</a></p>
 </li>
 </ul>
+<h2 id="关于gradle版本"><a href="#关于gradle版本" class="headerlink" title="关于gradle版本"></a>关于gradle版本</h2><p>首先分清gradle版本和gradle插件版本。一个是基本，一个是一些语法和方法的版本</p>
+<p>File -&gt; Project Structrue 查看或者修改当前项目的gradle信息，或者快捷键 Ctrl+Alt+Shift+S</p>
+<p><img src="https://github.com/AaronYang23/BlogImages/blob/main/framework/gradle.png?raw=true" alt></p>
+<p>项目根目录下builde.gradle -&gt; dependencies -&gt; classpath ‘com.android.tools.build:gradle:4.1.1’  是gradle插件版本</p>
+<p>更新gradle</p>
 <h2 id="app下的build-gradle-基本"><a href="#app下的build-gradle-基本" class="headerlink" title="app下的build.gradle  基本"></a>app下的build.gradle  基本</h2><pre><code>// 表示这是一个Android程序模块，如果是作为库，就声明为Library&apos;com.android.library&apos;
 apply plugin: &apos;com.android.application&apos;
 
@@ -594,16 +601,6 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 </code></pre><p>buildscript下的第一个子“节点”是声明仓库源，</p>
-<h2 id="annotationProcessor和android-apt：注解处理"><a href="#annotationProcessor和android-apt：注解处理" class="headerlink" title="annotationProcessor和android-apt：注解处理"></a>annotationProcessor和android-apt：注解处理</h2><p>APT：Annotation Processing Tool 的简称，处理注解的工具，可以在代码编译期解析注解，并生成新的Java文件，减少手动代码的输入。比如Dagger2，ButterKnife, EventBus3等<br>annotationProcessor和android-apt的功能是一样的，它们是替代关系。    Gradle2.2发布之后，annotationProcessor来代替android-apt、</p>
-<p>kotlin中不使用apt和annotationProcessor，使用kapt（Annotation Processing for Kotlin ）<br>例子：</p>
-<pre><code>//java中
-implementation &apos;com.google.dagger:dagger:2.17&apos;
-annotationProcessor &apos;com.google.dagger:dagger-compiler:2.17&apos;
-
-//kotlin中
-implementation &apos;com.google.dagger:dagger:2.17&apos;
-kapt &apos;com.google.dagger:dagger-compiler:2.17&apos;
-</code></pre><p><a href="https://blog.csdn.net/sinat_31057219/article/details/82798660" target="_blank" rel="noopener">插眼</a></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="https://blog.csdn.net/zhangxichao100/article/details/77770454" target="_blank" rel="noopener">app目录下的build.gradle详解</a></li>
 <li><a href="https://www.cnblogs.com/Kennytian/p/4923993.html" target="_blank" rel="noopener">学习Android Studio里的Gradle</a></li>
@@ -754,7 +751,7 @@ kapt &apos;com.google.dagger:dagger-compiler:2.17&apos;
               
                 <a href="/AaronYang23.github.io/archives/">
               
-                  <span class="site-state-item-count">108</span>
+                  <span class="site-state-item-count">111</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -839,7 +836,7 @@ kapt &apos;com.google.dagger:dagger-compiler:2.17&apos;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#gradle作用"><span class="nav-number">1.</span> <span class="nav-text">gradle作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卡在gradle-building"><span class="nav-number">2.</span> <span class="nav-text">卡在gradle building:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#app下的build-gradle-基本"><span class="nav-number">3.</span> <span class="nav-text">app下的build.gradle  基本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#moudle下的build-gradle"><span class="nav-number">4.</span> <span class="nav-text">moudle下的build.gradle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#annotationProcessor和android-apt：注解处理"><span class="nav-number">5.</span> <span class="nav-text">annotationProcessor和android-apt：注解处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#gradle作用"><span class="nav-number">1.</span> <span class="nav-text">gradle作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卡在gradle-building"><span class="nav-number">2.</span> <span class="nav-text">卡在gradle building:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于gradle版本"><span class="nav-number">3.</span> <span class="nav-text">关于gradle版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#app下的build-gradle-基本"><span class="nav-number">4.</span> <span class="nav-text">app下的build.gradle  基本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#moudle下的build-gradle"><span class="nav-number">5.</span> <span class="nav-text">moudle下的build.gradle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -874,7 +871,7 @@ kapt &apos;com.google.dagger:dagger-compiler:2.17&apos;
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">57.2k</span>
+    <span title="Site words total count">58.4k</span>
   
   -->
 </div>
@@ -908,7 +905,7 @@ kapt &apos;com.google.dagger:dagger-compiler:2.17&apos;
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">57.2k</span> 字
+      博客全站共： <span class="post-count">58.4k</span> 字
     </span>
 </div>
 <!-- 新增访客统计代码 END-->

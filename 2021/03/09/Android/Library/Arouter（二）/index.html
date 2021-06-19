@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="ArronYang">
 <meta property="og:description" content="Arouter(二)自动注入传递参数（对象）自动注入需要写 ARouter.getInstance().inject(this)  否则为空 如果不需要自动注入可以不写，写的话可以写基类中 @JvmField        //如果是kotlinbean类才添加 @Autowired(name = &amp;quot;ownerDashBoard&amp;quot;) var ownerDashBoardBean">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-03-25T08:17:14.602Z">
+<meta property="og:updated_time" content="2021-03-29T09:46:16.120Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Arouter(二)">
 <meta name="twitter:description" content="Arouter(二)自动注入传递参数（对象）自动注入需要写 ARouter.getInstance().inject(this)  否则为空 如果不需要自动注入可以不写，写的话可以写基类中 @JvmField        //如果是kotlinbean类才添加 @Autowired(name = &amp;quot;ownerDashBoard&amp;quot;) var ownerDashBoardBean">
@@ -349,8 +349,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-03-25T16:17:14+08:00">
-                2021-03-25
+              <time title="更新于" itemprop="dateModified" datetime="2021-03-29T17:46:16+08:00">
+                2021-03-29
               </time>
             
           </span>
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  291
+                  365
                 </span>
               
 
@@ -454,6 +454,10 @@ Fragment fragment = (Fragment) ARouter.getInstance().build(&quot;/test/fragment&
 <p>解决：检查每个库的AROUTER_MODULE_NAME是否配置，并且注解版本号要一致</p>
 <h3 id="如果报错无法找到路径，那么对照发生的原因，还有就是混合编码（java-kotlin）的module配置要对，包含kotlin的就用kapt方式"><a href="#如果报错无法找到路径，那么对照发生的原因，还有就是混合编码（java-kotlin）的module配置要对，包含kotlin的就用kapt方式" class="headerlink" title="如果报错无法找到路径，那么对照发生的原因，还有就是混合编码（java+kotlin）的module配置要对，包含kotlin的就用kapt方式"></a>如果报错无法找到路径，那么对照发生的原因，还有就是混合编码（java+kotlin）的module配置要对，包含kotlin的就用kapt方式</h3><h3 id="报错Arouter-error-duplicate-class"><a href="#报错Arouter-error-duplicate-class" class="headerlink" title="报错Arouter  error: duplicate class"></a>报错Arouter  error: duplicate class</h3><p>遇见这个情况怎么重新配置都没用，后来发现是因为重构拖拽文件时，界面文件会附带一个viewbinding的新建类，这个就是重复的，全部删除即可</p>
 <h3 id="ARouter-There-is-no-route-match-the-path-training-workFragment-in-group-training"><a href="#ARouter-There-is-no-route-match-the-path-training-workFragment-in-group-training" class="headerlink" title="ARouter::There is no route match the path [/training/workFragment], in group [training][ ]"></a>ARouter::There is no route match the path [/training/workFragment], in group [training][ ]</h3><p>这里获取fragment为空，由提示可知，不在同一个module下的最好是别用一个组名</p>
+<h3 id="打包的时候-报错提示-Program-type-already-present"><a href="#打包的时候-报错提示-Program-type-already-present" class="headerlink" title="打包的时候 报错提示  Program type already present"></a>打包的时候 报错提示  <code>Program type already present</code></h3><blockquote>
+<p>java.lang.RuntimeException: java.lang.RuntimeException: com.android.builder.dexing.DexArchiveMergerException: Error while merging dex archives:<br>Learn how to resolve the issue at <a href="https://developer.android.com/studio/build/dependencies#duplicate_classes" target="_blank" rel="noopener">https://developer.android.com/studio/build/dependencies#duplicate_classes</a>.<br>Program type already present: com.alibaba.android.arouter.routes.ARouter$$Group$$app</p>
+</blockquote>
+<p>说明arouter下有组名重复，重复组名是app(ARouter$$Group$$app)</p>
 
       
     </div>
@@ -599,7 +603,7 @@ Fragment fragment = (Fragment) ARouter.getInstance().build(&quot;/test/fragment&
               
                 <a href="/AaronYang23.github.io/archives/">
               
-                  <span class="site-state-item-count">108</span>
+                  <span class="site-state-item-count">111</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -684,7 +688,7 @@ Fragment fragment = (Fragment) ARouter.getInstance().build(&quot;/test/fragment&
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Arouter-二"><span class="nav-number">1.</span> <span class="nav-text">Arouter(二)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自动注入传递参数（对象）"><span class="nav-number">1.0.1.</span> <span class="nav-text">自动注入传递参数（对象）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fragment"><span class="nav-number">1.0.2.</span> <span class="nav-text">Fragment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见报错"><span class="nav-number">1.0.3.</span> <span class="nav-text">常见报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如果报错无法找到路径，那么对照发生的原因，还有就是混合编码（java-kotlin）的module配置要对，包含kotlin的就用kapt方式"><span class="nav-number">1.0.4.</span> <span class="nav-text">如果报错无法找到路径，那么对照发生的原因，还有就是混合编码（java+kotlin）的module配置要对，包含kotlin的就用kapt方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#报错Arouter-error-duplicate-class"><span class="nav-number">1.0.5.</span> <span class="nav-text">报错Arouter  error: duplicate class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARouter-There-is-no-route-match-the-path-training-workFragment-in-group-training"><span class="nav-number">1.0.6.</span> <span class="nav-text">ARouter::There is no route match the path [/training/workFragment], in group [training][ ]</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Arouter-二"><span class="nav-number">1.</span> <span class="nav-text">Arouter(二)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自动注入传递参数（对象）"><span class="nav-number">1.0.1.</span> <span class="nav-text">自动注入传递参数（对象）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fragment"><span class="nav-number">1.0.2.</span> <span class="nav-text">Fragment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见报错"><span class="nav-number">1.0.3.</span> <span class="nav-text">常见报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如果报错无法找到路径，那么对照发生的原因，还有就是混合编码（java-kotlin）的module配置要对，包含kotlin的就用kapt方式"><span class="nav-number">1.0.4.</span> <span class="nav-text">如果报错无法找到路径，那么对照发生的原因，还有就是混合编码（java+kotlin）的module配置要对，包含kotlin的就用kapt方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#报错Arouter-error-duplicate-class"><span class="nav-number">1.0.5.</span> <span class="nav-text">报错Arouter  error: duplicate class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ARouter-There-is-no-route-match-the-path-training-workFragment-in-group-training"><span class="nav-number">1.0.6.</span> <span class="nav-text">ARouter::There is no route match the path [/training/workFragment], in group [training][ ]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#打包的时候-报错提示-Program-type-already-present"><span class="nav-number">1.0.7.</span> <span class="nav-text">打包的时候 报错提示  Program type already present</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -719,7 +723,7 @@ Fragment fragment = (Fragment) ARouter.getInstance().build(&quot;/test/fragment&
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">57.2k</span>
+    <span title="Site words total count">58.4k</span>
   
   -->
 </div>
@@ -753,7 +757,7 @@ Fragment fragment = (Fragment) ARouter.getInstance().build(&quot;/test/fragment&
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">57.2k</span> 字
+      博客全站共： <span class="post-count">58.4k</span> 字
     </span>
 </div>
 <!-- 新增访客统计代码 END-->

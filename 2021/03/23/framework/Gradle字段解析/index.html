@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="Gradle字段解析看懂编译注解annotationProcessor和kapt annotationProcessor：Java编译时注解处理器 kapt：kotlin注解处理器插件 If you are using Kotlin, replace annotationProcessor with kapt.  kotlin-kapt不是Android Gradle 内置插件需要额外引入 app">
+<meta name="description" content="Gradle字段解析annotationProcessor和android-apt：注解处理 annotationProcessor&amp;amp;android-apt：Java编译时注解处理器  kapt:Kotlin译时注解处理器  APT：Annotation Processing Tool 的简称，处理注解的工具，可以在代码编译期解析注解，并生成新的Java文件，减少手动代码的输入。比如Dag">
 <meta name="keywords" content="gradle">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Gradle字段解析">
 <meta property="og:url" content="https://aaronyang23.github.io/2021/03/23/framework/Gradle字段解析/index.html">
 <meta property="og:site_name" content="ArronYang">
-<meta property="og:description" content="Gradle字段解析看懂编译注解annotationProcessor和kapt annotationProcessor：Java编译时注解处理器 kapt：kotlin注解处理器插件 If you are using Kotlin, replace annotationProcessor with kapt.  kotlin-kapt不是Android Gradle 内置插件需要额外引入 app">
+<meta property="og:description" content="Gradle字段解析annotationProcessor和android-apt：注解处理 annotationProcessor&amp;amp;android-apt：Java编译时注解处理器  kapt:Kotlin译时注解处理器  APT：Annotation Processing Tool 的简称，处理注解的工具，可以在代码编译期解析注解，并生成新的Java文件，减少手动代码的输入。比如Dag">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-03-23T02:46:33.673Z">
+<meta property="og:updated_time" content="2021-04-26T09:31:20.622Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Gradle字段解析">
-<meta name="twitter:description" content="Gradle字段解析看懂编译注解annotationProcessor和kapt annotationProcessor：Java编译时注解处理器 kapt：kotlin注解处理器插件 If you are using Kotlin, replace annotationProcessor with kapt.  kotlin-kapt不是Android Gradle 内置插件需要额外引入 app">
+<meta name="twitter:description" content="Gradle字段解析annotationProcessor和android-apt：注解处理 annotationProcessor&amp;amp;android-apt：Java编译时注解处理器  kapt:Kotlin译时注解处理器  APT：Annotation Processing Tool 的简称，处理注解的工具，可以在代码编译期解析注解，并生成新的Java文件，减少手动代码的输入。比如Dag">
 
 
 
@@ -349,8 +349,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-03-23T10:46:33+08:00">
-                2021-03-23
+              <time title="更新于" itemprop="dateModified" datetime="2021-04-26T17:31:20+08:00">
+                2021-04-26
               </time>
             
           </span>
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  61
+                  222
                 </span>
               
 
@@ -441,14 +441,29 @@
       
 
       
-        <h1 id="Gradle字段解析"><a href="#Gradle字段解析" class="headerlink" title="Gradle字段解析"></a>Gradle字段解析</h1><p><a href="https://www.jianshu.com/p/472e66632ed0" target="_blank" rel="noopener">看懂编译注解annotationProcessor和kapt</a></p>
-<p>annotationProcessor：Java编译时注解处理器</p>
+        <h1 id="Gradle字段解析"><a href="#Gradle字段解析" class="headerlink" title="Gradle字段解析"></a>Gradle字段解析</h1><h2 id="annotationProcessor和android-apt：注解处理"><a href="#annotationProcessor和android-apt：注解处理" class="headerlink" title="annotationProcessor和android-apt：注解处理"></a>annotationProcessor和android-apt：注解处理</h2><blockquote>
+<p>annotationProcessor&amp;android-apt：Java编译时注解处理器</p>
+<p> kapt:Kotlin译时注解处理器</p>
+</blockquote>
+<p>APT：Annotation Processing Tool 的简称，处理注解的工具，可以在代码编译期解析注解，并生成新的Java文件，减少手动代码的输入。比如Dagger2，ButterKnife, EventBus3等</p>
+<p>annotationProcessor和android-apt的功能是一样的，它们是替代关系。    Gradle2.2发布之后，annotationProcessor来代替android-apt、</p>
+<p>kotlin中不使用apt和annotationProcessor，使用kapt（Annotation Processing for Kotlin ）</p>
 <p>kapt：kotlin注解处理器插件</p>
-<pre><code>If you are using Kotlin, replace annotationProcessor with kapt.
+<pre><code>会有提示If you are using Kotlin, replace annotationProcessor with kapt.
 
 kotlin-kapt不是Android Gradle 内置插件需要额外引入
 apply plugin: &apos;kotlin-kapt&apos;
-</code></pre>
+</code></pre><p>例子：</p>
+<pre><code>//java中
+implementation &apos;com.google.dagger:dagger:2.17&apos;
+annotationProcessor &apos;com.google.dagger:dagger-compiler:2.17&apos;
+
+//kotlin中
+implementation &apos;com.google.dagger:dagger:2.17&apos;
+kapt &apos;com.google.dagger:dagger-compiler:2.17&apos;
+</code></pre><p><a href="https://blog.csdn.net/sinat_31057219/article/details/82798660" target="_blank" rel="noopener">插眼</a></p>
+<p><a href="https://www.jianshu.com/p/472e66632ed0" target="_blank" rel="noopener">插眼-看懂编译注解annotationProcessor和kapt</a></p>
+
       
     </div>
     
@@ -511,6 +526,10 @@ apply plugin: &apos;kotlin-kapt&apos;
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/AaronYang23.github.io/2021/03/29/Android/Library/第三方相关遇见问题的整理/" rel="prev" title="第三方相关遇见问题的整理">
+                第三方相关遇见问题的整理 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -589,7 +608,7 @@ apply plugin: &apos;kotlin-kapt&apos;
               
                 <a href="/AaronYang23.github.io/archives/">
               
-                  <span class="site-state-item-count">108</span>
+                  <span class="site-state-item-count">111</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -674,7 +693,7 @@ apply plugin: &apos;kotlin-kapt&apos;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Gradle字段解析"><span class="nav-number">1.</span> <span class="nav-text">Gradle字段解析</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Gradle字段解析"><span class="nav-number">1.</span> <span class="nav-text">Gradle字段解析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#annotationProcessor和android-apt：注解处理"><span class="nav-number">1.1.</span> <span class="nav-text">annotationProcessor和android-apt：注解处理</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -709,7 +728,7 @@ apply plugin: &apos;kotlin-kapt&apos;
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">57.2k</span>
+    <span title="Site words total count">58.4k</span>
   
   -->
 </div>
@@ -743,7 +762,7 @@ apply plugin: &apos;kotlin-kapt&apos;
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">57.2k</span> 字
+      博客全站共： <span class="post-count">58.4k</span> 字
     </span>
 </div>
 <!-- 新增访客统计代码 END-->

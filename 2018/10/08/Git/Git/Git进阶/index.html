@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="ArronYang">
 <meta property="og:description" content="标签作用：为某次提交打上一个标记，便于清楚此次提交最主要的作用。一般用来发线上包的时候打版本代码的标记。标签可以添加多个。 查看所有标签:     git branch -r  创建标签：     打上当前标签： git tag -a 标签名字 -m &amp;quot;标签概要&amp;quot;      为某次提交打上标签，后期加注标签： git tag -a 标签名字 版本校验和(或前几位字符) -m &amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-02-05T06:13:04.018Z">
+<meta property="og:updated_time" content="2021-04-21T09:31:52.004Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content=" Git(二) 进阶使用">
 <meta name="twitter:description" content="标签作用：为某次提交打上一个标记，便于清楚此次提交最主要的作用。一般用来发线上包的时候打版本代码的标记。标签可以添加多个。 查看所有标签:     git branch -r  创建标签：     打上当前标签： git tag -a 标签名字 -m &amp;quot;标签概要&amp;quot;      为某次提交打上标签，后期加注标签： git tag -a 标签名字 版本校验和(或前几位字符) -m &amp;">
@@ -349,8 +349,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2021-02-05T14:13:04+08:00">
-                2021-02-05
+              <time title="更新于" itemprop="dateModified" datetime="2021-04-21T17:31:52+08:00">
+                2021-04-21
               </time>
             
           </span>
@@ -404,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  769
+                  815
                 </span>
               
 
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  2
+                  3
                 </span>
               
             </div>
@@ -462,6 +462,9 @@
 推送标签：标签创建之后只是在本地仓库，默认情况下代码推送不会推送标签，需要单独推送标签服务器才能记录
     推送单个标签:  git push origin 标签名
     推送所有标签： git push origin --tags
+</code></pre><p>给以前的（指定的）提交记录打上标签：</p>
+<pre><code>git tag -a &quot;标签名&quot; commitID -m &quot;标签信息&quot;
+ps:studio中可以对某次提交直接加标签
 </code></pre><h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>分支是git很强大的功能，可以进行多人合作和多模块分开进行。分支切换则文件会恢复到切换的分支保存时候的状态。</p>
 <pre><code>新建分支
     git branch 新分支名       ps:尽量不要用中文命名
@@ -654,7 +657,7 @@ git stash clear
               
                 <a href="/AaronYang23.github.io/archives/">
               
-                  <span class="site-state-item-count">108</span>
+                  <span class="site-state-item-count">111</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -774,7 +777,7 @@ git stash clear
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">57.2k</span>
+    <span title="Site words total count">58.4k</span>
   
   -->
 </div>
@@ -808,7 +811,7 @@ git stash clear
     <!-- 博客字数统计 -->
     <span class="site-pv">
       <i class="fa fa-pencil"></i>
-      博客全站共： <span class="post-count">57.2k</span> 字
+      博客全站共： <span class="post-count">58.4k</span> 字
     </span>
 </div>
 <!-- 新增访客统计代码 END-->
